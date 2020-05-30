@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina3_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -12,88 +12,94 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="RpgDice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" clipsSubviews="YES" contentMode="scaleAspectFit" semanticContentAttribute="spatial" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hnr-EX-ipa">
-                                <rect key="frame" x="20" y="44" width="182" height="123"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="92" translatesAutoresizingMaskIntoConstraints="NO" id="9ZS-2L-QPl">
+                                <rect key="frame" x="53.5" y="28" width="213" height="424"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="140" translatesAutoresizingMaskIntoConstraints="NO" id="yo9-4I-leX">
+                                        <rect key="frame" x="0.0" y="0.0" width="213" height="45"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hnr-EX-ipa">
+                                                <rect key="frame" x="0.0" y="0.0" width="37" height="45"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <state key="normal" title="D6"/>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="rollD6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iKR-OO-VVW"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsF-AX-jX5">
+                                                <rect key="frame" x="177" y="0.0" width="36" height="45"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="tsF-AX-jX5" secondAttribute="height" multiplier="4:5" id="4kN-T8-o1e"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <state key="normal" title="D8"/>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="rollD8:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5yV-4M-kOx"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zez-Hd-tZI">
+                                        <rect key="frame" x="0.0" y="137" width="213" height="97"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VN-3U-yql">
+                                                <rect key="frame" x="0.0" y="0.0" width="101" height="97"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="5VN-3U-yql" secondAttribute="height" multiplier="47:45" id="Gez-V8-HEo"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <state key="normal" title="D12"/>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="rollD12:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s9u-du-hb5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZl-lJ-GlT">
+                                                <rect key="frame" x="101" y="0.0" width="112" height="97"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="tZl-lJ-GlT" secondAttribute="height" multiplier="52:45" id="T45-D2-deA"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                                <state key="normal" title="D20"/>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="rollD20:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k7j-ZL-VAy"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9I-V2-cc2">
+                                        <rect key="frame" x="0.0" y="326" width="213" height="98"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="u9I-V2-cc2" secondAttribute="height" multiplier="124:57" id="vdP-Ah-etw"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="47"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="182" id="dD3-If-oJ9"/>
-                                    <constraint firstAttribute="height" constant="123" id="jkn-tv-ick"/>
+                                    <constraint firstAttribute="width" secondItem="9ZS-2L-QPl" secondAttribute="height" multiplier="106:211" id="Dda-W8-2nZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="D6"/>
-                                <state key="highlighted">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="rollD6:" destination="BYZ-38-t0r" eventType="touchUpInside" id="iKR-OO-VVW"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5VN-3U-yql">
-                                <rect key="frame" x="20" y="175" width="182" height="123"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="123" id="8kY-Yo-jxV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="D12"/>
-                                <state key="highlighted">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="rollD12:" destination="BYZ-38-t0r" eventType="touchUpInside" id="s9u-du-hb5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZl-lJ-GlT">
-                                <rect key="frame" x="212" y="174" width="182" height="123"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="123" id="mgG-Rb-M1b"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="D20"/>
-                                <state key="highlighted">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="rollD20:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k7j-ZL-VAy"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tsF-AX-jX5">
-                                <rect key="frame" x="212" y="44" width="182" height="123"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <state key="normal" title="D8"/>
-                                <state key="highlighted">
-                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                                </state>
-                                <connections>
-                                    <action selector="rollD8:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5yV-4M-kOx"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Result" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u9I-V2-cc2">
-                                <rect key="frame" x="80" y="594" width="253" height="57"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="47"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="tsF-AX-jX5" firstAttribute="trailing" secondItem="tZl-lJ-GlT" secondAttribute="trailing" id="6rS-jI-Q8p"/>
-                            <constraint firstItem="Hnr-EX-ipa" firstAttribute="trailing" secondItem="5VN-3U-yql" secondAttribute="trailing" id="9IJ-gh-n9s"/>
-                            <constraint firstItem="Hnr-EX-ipa" firstAttribute="leading" secondItem="5VN-3U-yql" secondAttribute="leading" id="Bh7-lb-dGY"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="u9I-V2-cc2" secondAttribute="bottom" constant="211" id="FZV-nT-v6x"/>
-                            <constraint firstItem="tsF-AX-jX5" firstAttribute="leading" secondItem="Hnr-EX-ipa" secondAttribute="trailing" constant="10" id="IEQ-o5-9zy"/>
-                            <constraint firstItem="tsF-AX-jX5" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="LWp-aA-ARN"/>
-                            <constraint firstItem="5VN-3U-yql" firstAttribute="top" secondItem="Hnr-EX-ipa" secondAttribute="bottom" constant="8" id="Lte-dY-0kN"/>
-                            <constraint firstItem="u9I-V2-cc2" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="MKW-XA-sVx"/>
-                            <constraint firstItem="Hnr-EX-ipa" firstAttribute="top" secondItem="tsF-AX-jX5" secondAttribute="top" id="QSX-tx-Ubd"/>
-                            <constraint firstItem="Hnr-EX-ipa" firstAttribute="firstBaseline" secondItem="tsF-AX-jX5" secondAttribute="firstBaseline" id="TjG-Qt-8LU"/>
-                            <constraint firstItem="u9I-V2-cc2" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Twv-om-gNt"/>
-                            <constraint firstItem="Hnr-EX-ipa" firstAttribute="baseline" secondItem="tsF-AX-jX5" secondAttribute="baseline" id="WjC-Pg-G4O"/>
-                            <constraint firstItem="Hnr-EX-ipa" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="d0d-wj-iQl"/>
-                            <constraint firstItem="Hnr-EX-ipa" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="oUw-SF-4xF"/>
-                            <constraint firstItem="tZl-lJ-GlT" firstAttribute="top" secondItem="tsF-AX-jX5" secondAttribute="bottom" constant="7" id="pLK-za-kQ6"/>
-                            <constraint firstItem="tsF-AX-jX5" firstAttribute="leading" secondItem="tZl-lJ-GlT" secondAttribute="leading" id="sRp-Ol-N1c"/>
+                            <constraint firstItem="9ZS-2L-QPl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Aex-ik-Z36"/>
+                            <constraint firstItem="9ZS-2L-QPl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LsF-yw-nHW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
