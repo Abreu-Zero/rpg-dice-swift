@@ -12,6 +12,17 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var resultLabel: UILabel!
     
+    open override var shouldAutorotate: Bool {
+    get {
+        return false
+        }}
+    
+    override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
+        get {
+            return .portrait
+        }
+    }
+    
     func  rollDice(dice : Int) -> Int{
         switch dice {
         case 6:
