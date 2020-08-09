@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9970AA4E24E054510087C25F /* RpgDice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9970AA4C24E054510087C25F /* RpgDice.xcdatamodeld */; };
+		9970AA5124E054FA0087C25F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9970AA5024E054FA0087C25F /* DataController.swift */; };
+		9970AA5324E055A90087C25F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9970AA5224E055A90087C25F /* FirstViewController.swift */; };
 		99C7978D24E0309A005C903E /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7978C24E0309A005C903E /* ResultsViewController.swift */; };
+		99DEFB1424E05847006DAE22 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DEFB1324E05847006DAE22 /* HistoryViewController.swift */; };
 		99E92D5E24819E9200188E04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E92D5D24819E9200188E04 /* AppDelegate.swift */; };
 		99E92D6024819E9200188E04 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E92D5F24819E9200188E04 /* SceneDelegate.swift */; };
 		99E92D6224819E9200188E04 /* DicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E92D6124819E9200188E04 /* DicesViewController.swift */; };
@@ -36,8 +40,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9970AA4D24E054510087C25F /* RpgDice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RpgDice.xcdatamodel; sourceTree = "<group>"; };
+		9970AA5024E054FA0087C25F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		9970AA5224E055A90087C25F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		9970FB5324E02A4400E8FB63 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		99C7978C24E0309A005C903E /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		99DEFB1324E05847006DAE22 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		99E92D5A24819E9200188E04 /* RpgDice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RpgDice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E92D5D24819E9200188E04 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		99E92D5F24819E9200188E04 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -79,11 +87,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9970AA4F24E054570087C25F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9970AA4C24E054510087C25F /* RpgDice.xcdatamodeld */,
+				9970AA5024E054FA0087C25F /* DataController.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		9970FB5024E01C1B00E8FB63 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				99E92D6124819E9200188E04 /* DicesViewController.swift */,
 				99C7978C24E0309A005C903E /* ResultsViewController.swift */,
+				9970AA5224E055A90087C25F /* FirstViewController.swift */,
+				99DEFB1324E05847006DAE22 /* HistoryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -123,6 +142,7 @@
 			children = (
 				99E92D5D24819E9200188E04 /* AppDelegate.swift */,
 				99E92D5F24819E9200188E04 /* SceneDelegate.swift */,
+				9970AA4F24E054570087C25F /* Model */,
 				9970FB5024E01C1B00E8FB63 /* Controllers */,
 				9970FB5124E01C3900E8FB63 /* Views */,
 				99E92D6B24819E9800188E04 /* Info.plist */,
@@ -281,9 +301,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				99E92D6224819E9200188E04 /* DicesViewController.swift in Sources */,
+				9970AA5124E054FA0087C25F /* DataController.swift in Sources */,
 				99E92D5E24819E9200188E04 /* AppDelegate.swift in Sources */,
 				99E92D6024819E9200188E04 /* SceneDelegate.swift in Sources */,
 				99C7978D24E0309A005C903E /* ResultsViewController.swift in Sources */,
+				9970AA4E24E054510087C25F /* RpgDice.xcdatamodeld in Sources */,
+				9970AA5324E055A90087C25F /* FirstViewController.swift in Sources */,
+				99DEFB1424E05847006DAE22 /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -610,6 +634,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9970AA4C24E054510087C25F /* RpgDice.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9970AA4D24E054510087C25F /* RpgDice.xcdatamodel */,
+			);
+			currentVersion = 9970AA4D24E054510087C25F /* RpgDice.xcdatamodel */;
+			path = RpgDice.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 99E92D5224819E9100188E04 /* Project object */;
 }

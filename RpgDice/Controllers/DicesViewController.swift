@@ -13,6 +13,7 @@ import UIKit
 class DicesViewController: UIViewController {
     
     var result: Int?
+    var dataController: DataController?
     
     //This func handles all the IBActions called
     //Results are going to be displayed in the next ViewController
@@ -23,6 +24,14 @@ class DicesViewController: UIViewController {
     
     func rollAndSend(dice: Int){
         self.result = rollDice(dice: dice)
+        
+        let die = Roll(context: dataController!.viewContext)
+        die.result = String(self.result!)
+        die.creationDate = Date()
+        die.die = String(dice)
+        
+        try? dataController?.viewContext.save()
+        
         performSegue(withIdentifier: "rollResult", sender: self)
     }
     
@@ -56,6 +65,8 @@ class DicesViewController: UIViewController {
         if segue.identifier == "rollResult"{
             let vcDest = segue.destination as! ResultsViewController
             vcDest.rollResult = result
+            vcDest.dataController = dataController
+            vcDest.rollDate = Date()
         }
     
     }

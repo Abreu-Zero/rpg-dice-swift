@@ -23,10 +23,10 @@
             </objects>
             <point key="canvasLocation" x="689" y="-394"/>
         </scene>
-        <!--View Controller-->
+        <!--First View Controller-->
         <scene sceneID="HWq-GB-6tJ">
             <objects>
-                <viewController id="T0a-9J-kFo" sceneMemberID="viewController">
+                <viewController id="T0a-9J-kFo" customClass="FirstViewController" customModule="RpgDice" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mlk-wf-iv3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,7 +42,7 @@
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="cry-h0-Kfn" kind="show" id="YDW-pV-NlI"/>
+                                            <segue destination="cry-h0-Kfn" kind="show" identifier="toLibrary" id="YDW-pV-NlI"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KGf-gF-cgV">
@@ -53,7 +53,7 @@
                                             <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" id="CgW-YI-sEm"/>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="toDice" id="CgW-YI-sEm"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -91,6 +91,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="D4">
                                             <color key="titleColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <state key="highlighted">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -104,6 +105,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="D6">
                                             <color key="titleColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <state key="highlighted">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -117,6 +119,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="D8">
                                             <color key="titleColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <state key="highlighted">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -131,6 +134,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="D10">
                                             <color key="titleColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <state key="highlighted">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -144,6 +148,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="D12">
                                             <color key="titleColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <state key="highlighted">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -157,6 +162,7 @@
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <state key="normal" title="D20">
                                             <color key="titleColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                         <state key="highlighted">
                                             <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -168,7 +174,8 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u2R-1J-2yH">
                                         <rect key="frame" x="0.0" y="592" width="375" height="98.666666666666629"/>
                                         <state key="normal" title="History">
-                                            <color key="titleColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" cocoaTouchSystemColor="darkTextColor"/>
                                         </state>
                                     </button>
                                 </subviews>
@@ -202,25 +209,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txA-JS-RdR">
-                                <rect key="frame" x="166" y="396" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="resultLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txA-JS-RdR">
+                                <rect key="frame" x="102.66666666666667" y="384.66666666666669" width="169.66666666666663" height="43"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You rolled a:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eYh-6d-NUk">
+                                <rect key="frame" x="140.66666666666666" y="273.66666666666669" width="94" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaZ-ZB-NRg">
+                                <rect key="frame" x="171" y="310.66666666666669" width="33" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Getting a:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yN2-m9-e3Z">
+                                <rect key="frame" x="150" y="347.66666666666669" width="75" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date and time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2pl-Cm-D7m">
+                                <rect key="frame" x="135" y="443.66666666666669" width="105" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="GAP-9i-ZDW">
+                                <rect key="frame" x="16" y="470.66666666666669" width="343" height="193.33333333333331"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="txA-JS-RdR" firstAttribute="centerX" secondItem="EM8-ie-m2T" secondAttribute="centerX" id="8Av-3T-sfh"/>
+                            <constraint firstItem="vkl-er-q4W" firstAttribute="trailing" secondItem="GAP-9i-ZDW" secondAttribute="trailing" constant="16" id="EZH-Rv-YUS"/>
+                            <constraint firstItem="txA-JS-RdR" firstAttribute="centerY" secondItem="EM8-ie-m2T" secondAttribute="centerY" id="I7Y-sV-MB4"/>
+                            <constraint firstItem="2pl-Cm-D7m" firstAttribute="centerX" secondItem="EM8-ie-m2T" secondAttribute="centerX" id="Ljj-y6-Xdg"/>
+                            <constraint firstItem="eYh-6d-NUk" firstAttribute="centerX" secondItem="EM8-ie-m2T" secondAttribute="centerX" id="SYj-NH-ByI"/>
+                            <constraint firstItem="yN2-m9-e3Z" firstAttribute="bottom" secondItem="txA-JS-RdR" secondAttribute="top" constant="-16" id="UZY-Rd-wRP"/>
+                            <constraint firstItem="eYh-6d-NUk" firstAttribute="bottom" secondItem="YaZ-ZB-NRg" secondAttribute="top" constant="-16" id="Vwh-BX-RXf"/>
+                            <constraint firstItem="vkl-er-q4W" firstAttribute="bottom" secondItem="GAP-9i-ZDW" secondAttribute="bottom" constant="114" id="WFG-O6-6Qp"/>
+                            <constraint firstItem="yN2-m9-e3Z" firstAttribute="centerX" secondItem="EM8-ie-m2T" secondAttribute="centerX" id="Y9h-Wd-X1L"/>
+                            <constraint firstItem="YaZ-ZB-NRg" firstAttribute="bottom" secondItem="yN2-m9-e3Z" secondAttribute="top" constant="-16" id="Yj6-fe-byi"/>
+                            <constraint firstItem="YaZ-ZB-NRg" firstAttribute="centerX" secondItem="EM8-ie-m2T" secondAttribute="centerX" id="htA-ij-Mdt"/>
+                            <constraint firstItem="GAP-9i-ZDW" firstAttribute="leading" secondItem="vkl-er-q4W" secondAttribute="leading" constant="16" id="qYz-uh-GKX"/>
+                            <constraint firstItem="2pl-Cm-D7m" firstAttribute="top" secondItem="txA-JS-RdR" secondAttribute="bottom" constant="16" id="tPe-fj-9UJ"/>
+                            <constraint firstItem="GAP-9i-ZDW" firstAttribute="top" secondItem="2pl-Cm-D7m" secondAttribute="bottom" constant="6" id="uGO-Vj-USt"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="vkl-er-q4W"/>
                     </view>
                     <navigationItem key="navigationItem" id="cUO-bh-oLj"/>
                     <connections>
+                        <outlet property="dateLabel" destination="2pl-Cm-D7m" id="JPC-TX-KL9"/>
                         <outlet property="resultLabel" destination="txA-JS-RdR" id="r4b-Vk-v9x"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vLf-Oa-aWh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1484" y="279"/>
+            <point key="canvasLocation" x="1484" y="277.83251231527095"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="IWK-PY-4Nm">
