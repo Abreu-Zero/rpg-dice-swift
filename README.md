@@ -16,7 +16,6 @@ could save the creation date and time, maybe a list with the last ones rolled as
 Requirements and Specifications:
 --------------------------------
 
-* App should use Apple's authentication
 * App should roll die from D4 to D20
 * App should save the date and time of the roll, as the last rolls in a list
 * App could display a small manual for equipment
