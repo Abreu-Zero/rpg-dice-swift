@@ -67,6 +67,10 @@ class DicesViewController: UIViewController {
             vcDest.rollResult = result
             vcDest.dataController = dataController
             vcDest.rollDate = Date()
+            
+        } else if segue.identifier == "toHistory"{
+            let vcDest = segue.destination as! HistoryViewController
+            vcDest.dataController = dataController
         }
     
     }
