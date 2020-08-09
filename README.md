@@ -12,7 +12,9 @@ Why?
 
 Well, I thought that would be nice to have a handy helper with stuff like: 
 items and equipment description, classes and monsters... 
+
 besides, of course, a die roller that could save the date and time of the said roll, maybe a list with the last ones rolled as well 
+
 that all to be shared via messages and help the dungeon master to narrate the game.
 
 Requirements and Specifications:
