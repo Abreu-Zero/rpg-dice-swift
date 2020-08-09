@@ -18,46 +18,38 @@ class DicesViewController: UIViewController {
     //Results are going to be displayed in the next ViewController
     
     func  rollDice(dice : Int) -> Int{
-        var result: Int?
-        
-        switch dice {
-        case 4:
-            result = Int.random(in: 1 ... 4)
-        case 6:
-            result = Int.random(in: 1 ... 6)
-        case 8:
-            result = Int.random(in: 1 ... 8)
-        case 10:
-            result = Int.random(in: 1 ... 10)
-        case 12:
-            result = Int.random(in: 1 ... 12)
-        default:
-            result = Int.random(in: 1 ... 20)
-        }
-        
-        
-        return result!
+        return Int.random(in: 1 ... dice)
+    }
+    
+    func rollAndSend(dice: Int){
+        self.result = rollDice(dice: dice)
+        performSegue(withIdentifier: "rollResult", sender: self)
     }
     
     //MARK: IBActions for the rolls
+    
+    @IBAction func rollD4(_ sender: Any) {
+        rollAndSend(dice: 4)
+    }
+    
     @IBAction func rollD6(_ sender: Any) {
-        self.result = rollDice(dice: 6)
-        performSegue(withIdentifier: "rollResult", sender: self)
-
+        rollAndSend(dice: 6)
     }
     
     @IBAction func rollD8(_ sender: Any) {
-        self.result = rollDice(dice: 8)
-        performSegue(withIdentifier: "rollResult", sender: self)
-
+        rollAndSend(dice: 8)
+    }
+    
+    @IBAction func rollD10(_ sender: Any) {
+        rollAndSend(dice: 10)
     }
     
     @IBAction func rollD12(_ sender: Any) {
-        self.result = rollDice(dice: 12)
+        rollAndSend(dice: 12)
     }
     
     @IBAction func rollD20(_ sender: Any) {
-        self.result = rollDice(dice: 20)
+        rollAndSend(dice: 20)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
