@@ -1,7 +1,7 @@
 # rpg-dice-swift
-================
 
-For a long time, bacause of this quarentine, me and some friends are trying to play RPG via chat, mostly using Whatsapp and online dice rollers.
+
+For a long time, bacause of this quarantine, me and some friends are trying to play RPG via chat, mostly using Whatsapp and online dice rollers.
 But there is this weird friend that always had the worst results ever and the other one that is always getting criticals and stuff.
 
 Seeing our struggle, I decided to take a look at the [D&D 5th Edition API](https://www.dnd5eapi.co/) 
