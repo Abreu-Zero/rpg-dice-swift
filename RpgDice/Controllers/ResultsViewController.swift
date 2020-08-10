@@ -46,26 +46,37 @@ class ResultsViewController: UIViewController {
     
     func loadPreviousResults(){
         
+        let toPop: [UILabel] = [prevResult1, prevResult2, prevResult3]
+        
         let fetchRequest : NSFetchRequest<Roll> = Roll.fetchRequest()
         let sortDescription = NSSortDescriptor(key: "creationDate", ascending: false)
         fetchRequest.sortDescriptors = [sortDescription]
         
-        guard let result = try? dataController?.viewContext.fetch(fetchRequest) else{
-            prevResult1.text = "No result found"
-            prevResult2.text = "No result found"
-            prevResult3.text = "No result found"
-            return
+        for p in toPop{
+            p.text = ""
         }
+        
+        guard let result = try? dataController?.viewContext.fetch(fetchRequest) else{return}
+        
         prevResults = result
         var dates: [String] = []
-        
-        for i in (1...4){
-            dates.append(formatDate(date: prevResults![i].creationDate!))
+        if prevResults!.count > 0{
+            for i in (1..<prevResults!.count){
+                dates.append(formatDate(date: prevResults![i].creationDate!))
+                if dates.count >= 3{
+                    break
+                }
+            }
+            for i in (0..<dates.count){
+                toPop[i].text = "rolled a D\(String(prevResults![i+1].die!)) and got \(prevResults![i+1].result!) at \(dates[i])"
+                
+                if i >= 3{
+                    break
+                }
+            }
+            
+            diceLabel.text = "D\(prevResults![0].die!)"
         }
-        diceLabel.text = "D\(prevResults![0].die!)"
-        prevResult1.text = "rolled a D\(String(prevResults![1].die!)) and got \(prevResults![1].result!) at \(dates[0])"
-        prevResult2.text = "rolled a D\(String(prevResults![2].die!)) and got \(prevResults![2].result!) at \(dates[1])"
-        prevResult3.text = "rolled a D\(String(prevResults![3].die!)) and got \(String(prevResults![3].result!)) at \(dates[2])"
 
     }
 
