@@ -80,6 +80,22 @@ class ResultsViewController: UIViewController {
 
     }
 
+    //MARK: share funcs
+    
     @IBAction func shareRoll(_ sender: Any) {
+        let shareController = UIActivityViewController(activityItems: [saveRollImg()], applicationActivities: [])
+        self.present(shareController, animated: true, completion: nil)
     }
+    
+    func saveRollImg() -> UIImage{
+       
+       UIGraphicsBeginImageContext(self.view.frame.size)
+       view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+       let rollImg : UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+       UIGraphicsEndImageContext()
+        
+        return rollImg
+    }
+
 }
+
