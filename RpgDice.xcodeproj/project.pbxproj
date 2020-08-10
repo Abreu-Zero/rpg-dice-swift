@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		992A0C2124E1C81E00289108 /* DndAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A0C2024E1C81E00289108 /* DndAPI.swift */; };
+		992A0C2324E1CA2C00289108 /* BaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A0C2224E1CA2C00289108 /* BaseResult.swift */; };
+		992A0C2524E1CBE400289108 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A0C2424E1CBE400289108 /* LibraryViewController.swift */; };
 		9970AA4E24E054510087C25F /* RpgDice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9970AA4C24E054510087C25F /* RpgDice.xcdatamodeld */; };
 		9970AA5124E054FA0087C25F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9970AA5024E054FA0087C25F /* DataController.swift */; };
 		9970AA5324E055A90087C25F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9970AA5224E055A90087C25F /* FirstViewController.swift */; };
@@ -40,6 +43,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		992A0C2024E1C81E00289108 /* DndAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DndAPI.swift; sourceTree = "<group>"; };
+		992A0C2224E1CA2C00289108 /* BaseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResult.swift; sourceTree = "<group>"; };
+		992A0C2424E1CBE400289108 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		9970AA4D24E054510087C25F /* RpgDice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RpgDice.xcdatamodel; sourceTree = "<group>"; };
 		9970AA5024E054FA0087C25F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		9970AA5224E055A90087C25F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -87,9 +93,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		992A0C1F24E1C71900289108 /* dnd5eapi */ = {
+			isa = PBXGroup;
+			children = (
+				992A0C2024E1C81E00289108 /* DndAPI.swift */,
+				992A0C2224E1CA2C00289108 /* BaseResult.swift */,
+			);
+			path = dnd5eapi;
+			sourceTree = "<group>";
+		};
 		9970AA4F24E054570087C25F /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				992A0C1F24E1C71900289108 /* dnd5eapi */,
 				9970AA4C24E054510087C25F /* RpgDice.xcdatamodeld */,
 				9970AA5024E054FA0087C25F /* DataController.swift */,
 			);
@@ -103,6 +119,7 @@
 				99C7978C24E0309A005C903E /* ResultsViewController.swift */,
 				9970AA5224E055A90087C25F /* FirstViewController.swift */,
 				99DEFB1324E05847006DAE22 /* HistoryViewController.swift */,
+				992A0C2424E1CBE400289108 /* LibraryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -300,6 +317,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				992A0C2124E1C81E00289108 /* DndAPI.swift in Sources */,
+				992A0C2524E1CBE400289108 /* LibraryViewController.swift in Sources */,
+				992A0C2324E1CA2C00289108 /* BaseResult.swift in Sources */,
 				99E92D6224819E9200188E04 /* DicesViewController.swift in Sources */,
 				9970AA5124E054FA0087C25F /* DataController.swift in Sources */,
 				99E92D5E24819E9200188E04 /* AppDelegate.swift in Sources */,
