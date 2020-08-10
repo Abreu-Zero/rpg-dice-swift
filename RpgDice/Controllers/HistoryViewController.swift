@@ -56,4 +56,17 @@ class HistoryViewController: UITableViewController {
            return cell
        }
 
+    @IBAction func deleteHistory(_ sender: Any) {
+        for roll in previousResults!{
+            dataController?.viewContext.delete(roll)
+        }
+        do{
+            try dataController?.viewContext.save()
+
+        } catch{
+            print("ERROR: error while saving the data")
+        }
+        previousResults = []
+        tableView.reloadData()
+    }
 }

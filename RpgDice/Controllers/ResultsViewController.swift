@@ -69,4 +69,6 @@ class ResultsViewController: UIViewController {
 
     }
 
+    @IBAction func shareRoll(_ sender: Any) {
+    }
 }
