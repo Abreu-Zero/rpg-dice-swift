@@ -14,10 +14,23 @@
                     <view key="view" contentMode="scaleToFill" id="cn3-sS-vjj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gY2-0A-ddH">
+                                <rect key="frame" x="0.0" y="88" width="375" height="216"/>
+                            </pickerView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="gY2-0A-ddH" firstAttribute="leading" secondItem="HpI-Ug-rcD" secondAttribute="leading" id="1RC-8E-Rm0"/>
+                            <constraint firstItem="HpI-Ug-rcD" firstAttribute="trailing" secondItem="gY2-0A-ddH" secondAttribute="trailing" id="Cbv-1L-bt5"/>
+                            <constraint firstItem="gY2-0A-ddH" firstAttribute="top" secondItem="HpI-Ug-rcD" secondAttribute="top" id="jvV-W9-Z9Q"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HpI-Ug-rcD"/>
                     </view>
                     <navigationItem key="navigationItem" id="Wpf-7x-b36"/>
+                    <connections>
+                        <outlet property="picker" destination="gY2-0A-ddH" id="jO8-xl-qON"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0I0-Ts-Sc7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

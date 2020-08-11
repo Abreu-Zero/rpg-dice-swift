@@ -8,22 +8,35 @@
 
 import UIKit
 
-class LibraryViewController: UIViewController {
+class LibraryViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
+    
+    @IBOutlet weak var picker: UIPickerView!
+    
+    let endpoints: [String] = ["abilityScores", "classes", "equipment", "monsters", "races", "spells"]
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return endpoints.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+           return endpoints[row]
+       }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        DndAPI.requestBase(endpoint: .monsters) { (result, error) in
-            guard let result = result else{
-                print(error!)
-                return
-            }
-            print(result)
+        picker.dataSource = self
+        picker.delegate = self
+        picker.reloadAllComponents()
         }
         
         //TODO: Dropdown menu works
         //TODO: add activityIndicator
         //TODO: UI responds to requests
 
-    }
     
 }
