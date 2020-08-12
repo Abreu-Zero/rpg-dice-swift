@@ -14,8 +14,8 @@ struct AbilityScores: Codable{
     let index: String
     let name: String
     let fullName: String
-    let description: String
-    let skills: String
+    let description: [String]
+    let skills: [[String : String]]
     let url: String
     
     enum CodingKeys: String, CodingKey{

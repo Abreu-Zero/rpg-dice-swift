@@ -47,7 +47,6 @@ public class DndAPI{
     class func requestBase(endpoint: Endpoint, completionHandler: @escaping (BaseResult?, Error?) -> Void){
         
         let endURL = (endpoint.url)
-        print(endURL)
         let task = URLSession.shared.dataTask(with: endURL) { (data, response, error) in
             
             guard let data = data else {
@@ -60,6 +59,36 @@ public class DndAPI{
             do
             {
                 let data = try decoder.decode(BaseResult.self, from: data)
+                completionHandler(data, nil)
+            }
+            catch
+            {
+                print("ERROR: JSON not found")
+                completionHandler(nil, error)
+            }
+        }
+        task.resume()
+    }
+    
+    class func categoryRequest(url: String, completionHandler: @escaping (AbilityScores?, Error?) -> Void){
+        
+        //TODO: create a switch to handle the 6 categories
+        //TODO: change the return (completion) to String array to use in text labels
+        
+        guard let url = URL(string: baseURL + url) else{return}
+        
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+            
+            guard let data = data else {
+                print("ERROR: no data")
+                completionHandler(nil, error)
+                return
+            }
+            print(data)
+            let decoder = JSONDecoder()
+            do
+            {
+                let data = try decoder.decode(AbilityScores.self, from: data)
                 completionHandler(data, nil)
             }
             catch

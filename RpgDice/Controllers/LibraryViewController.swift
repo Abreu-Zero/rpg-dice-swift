@@ -17,6 +17,7 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var results: [Result] = []
     let linkedList = LinkedList()
+    var toSend: AbilityScores?
     
     //MARK: pickerVIew funcs
     
@@ -57,6 +58,19 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
         return cell!
        }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        DndAPI.categoryRequest(url: results[indexPath.row].url) { (result, error) in
+            guard let result = result else{
+                print(error!)
+                return
+            }
+            self.toSend = result
+            DispatchQueue.main.async {
+                self.performSegue(withIdentifier: "openBook", sender: self)
+            }
+        }
+    }
+    
     //MARK: viewDid funcs
 
     override func viewDidLoad() {
@@ -80,5 +94,12 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
         linkedList.append(node: nodeRaces)
         let nodeSpells = Node(value: DndAPI.Endpoint.spells, title: "Spells")
         linkedList.append(node: nodeSpells)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "openBook"{
+        let destination = segue.destination as! BookViewController
+        destination.ability = self.toSend!
+        }
     }
 }

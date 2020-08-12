@@ -58,11 +58,53 @@
                     <connections>
                         <outlet property="picker" destination="gY2-0A-ddH" id="jO8-xl-qON"/>
                         <outlet property="tableView" destination="7tl-5s-x5v" id="Fcm-0C-lWM"/>
+                        <segue destination="uC5-Fb-EAe" kind="presentation" identifier="openBook" id="ibs-ws-Yqa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0I0-Ts-Sc7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="688.79999999999995" y="-394.58128078817737"/>
+        </scene>
+        <!--Book View Controller-->
+        <scene sceneID="SSd-1f-52Q">
+            <objects>
+                <viewController id="uC5-Fb-EAe" customClass="BookViewController" customModule="RpgDice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZDl-hP-c97">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ql6-uq-WFV">
+                                <rect key="frame" x="146.66666666666666" y="65" width="82" height="39"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="35" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CH6-lo-vId">
+                                <rect key="frame" x="16" y="136" width="343" height="588"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ql6-uq-WFV" firstAttribute="centerX" secondItem="ZDl-hP-c97" secondAttribute="centerX" id="0Ox-Ts-IrS"/>
+                            <constraint firstItem="7fe-2V-ZdX" firstAttribute="bottom" secondItem="CH6-lo-vId" secondAttribute="bottom" id="Ogo-7O-dtp"/>
+                            <constraint firstItem="7fe-2V-ZdX" firstAttribute="trailing" secondItem="CH6-lo-vId" secondAttribute="trailing" constant="16" id="Th9-MN-Iza"/>
+                            <constraint firstItem="CH6-lo-vId" firstAttribute="top" secondItem="ql6-uq-WFV" secondAttribute="bottom" constant="32" id="eQi-0r-x8S"/>
+                            <constraint firstItem="ql6-uq-WFV" firstAttribute="top" secondItem="7fe-2V-ZdX" secondAttribute="top" constant="65" id="eRx-dd-StS"/>
+                            <constraint firstItem="CH6-lo-vId" firstAttribute="leading" secondItem="7fe-2V-ZdX" secondAttribute="leading" constant="16" id="iRq-2I-uCv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7fe-2V-ZdX"/>
+                    </view>
+                    <connections>
+                        <outlet property="descLabel" destination="CH6-lo-vId" id="7VE-yC-0Tz"/>
+                        <outlet property="titleLabel" destination="ql6-uq-WFV" id="yAF-uA-vaQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="asE-Uu-UaR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1484" y="-395.32019704433498"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="HWq-GB-6tJ">
