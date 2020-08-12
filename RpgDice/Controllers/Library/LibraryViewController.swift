@@ -35,12 +35,17 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
        }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.results = []
         category = linkedList.index(index: row)!.title
         DndAPI.requestBase(endpoint: linkedList.index(index: row)!.value) { (result, error) in
             guard let result = result else{
                 return
             }
-            self.results = result.results
+            for r in result.results{
+                if r.url != nil{
+                    self.results.append(r)
+                }
+            }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
@@ -61,7 +66,7 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
        }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        DndAPI.categoryRequest(url: results[indexPath.row].url, category: self.category) { (result, error) in
+        DndAPI.categoryRequest(url: results[indexPath.row].url!, category: self.category) { (result, error) in
             guard let result = result else{
                 print(error!)
                 return

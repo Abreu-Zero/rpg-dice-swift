@@ -25,7 +25,6 @@ public class DndAPI{
         var url: URL{
             return URL(string: self.stringValue)!
         }
-    
         var stringValue: String {
             switch self{
             case .abilityScores:
@@ -33,7 +32,7 @@ public class DndAPI{
             case .classes:
                 return baseURL + "/api/classes"
             case .equipment:
-                return baseURL + "/api/equipment"
+                return baseURL + "/api/equipment-categories"
             case .monsters:
                 return baseURL + "/api/monsters"
             case .races:
@@ -47,6 +46,7 @@ public class DndAPI{
     class func requestBase(endpoint: Endpoint, completionHandler: @escaping (BaseResult?, Error?) -> Void){
         
         let endURL = (endpoint.url)
+        print(endURL)
         let task = URLSession.shared.dataTask(with: endURL) { (data, response, error) in
             
             guard let data = data else {
@@ -96,6 +96,8 @@ public class DndAPI{
                 case "Classes":
                     let result = try decoder.decode(ClassResponse.self, from: data)
                     completionHandler(result, nil)
+                case "Equipment":
+                    return
                 default:
                     return
                 }

@@ -16,5 +16,5 @@ struct BaseResult: Codable{
 struct Result: Codable{
     let index: String
     let name: String
-    let url: String
+    let url: String?
 }
