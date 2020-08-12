@@ -8,6 +8,8 @@
 
 import UIKit
 
+//TODO: find a way to filter the requests and create a responsive UI accordingly
+
 class EquipBookViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
