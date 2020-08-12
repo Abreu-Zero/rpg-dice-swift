@@ -61,6 +61,7 @@
                         <outlet property="picker" destination="gY2-0A-ddH" id="jO8-xl-qON"/>
                         <outlet property="tableView" destination="7tl-5s-x5v" id="Fcm-0C-lWM"/>
                         <segue destination="uC5-Fb-EAe" kind="presentation" identifier="openBook" id="ibs-ws-Yqa"/>
+                        <segue destination="hI3-1d-Cdh" kind="presentation" identifier="openClass" id="46O-AH-eJ6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0I0-Ts-Sc7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -133,6 +134,93 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="asE-Uu-UaR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-759.20000000000005" y="-1103.2019704433499"/>
+        </scene>
+        <!--Classes Book View Controller-->
+        <scene sceneID="zWD-v5-Mxs">
+            <objects>
+                <viewController id="hI3-1d-Cdh" customClass="ClassesBookViewController" customModule="RpgDice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d10-ln-zpS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Yk3-Wp-bwj">
+                                <rect key="frame" x="8" y="0.0" width="359" height="724"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Druid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pi8-Ne-9Jh">
+                                        <rect key="frame" x="151.33333333333334" y="0.0" width="56.333333333333343" height="125"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hit die: 8" textAlignment="natural" lineBreakMode="clip" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rx7-JF-D06">
+                                        <rect key="frame" x="151.33333333333334" y="125" width="56.666666666666657" height="81"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proeficiency Choices: 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n8z-n6-oKV">
+                                        <rect key="frame" x="94.333333333333329" y="206" width="170.66666666666669" height="92"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="17" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SrX-HS-rgI">
+                                        <rect key="frame" x="0.0" y="298" width="359" height="80.666666666666686"/>
+                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas nec nisi ut fringilla. Quisque mollis massa in dictum dignissim. In aliquam pharetra eleifend. Sed dignissim neque eget metus porta, a eleifend turpis maximus. Aliquam bibendum arcu at mi lobortis mollis. Fusce varius, libero cursus pretium finibus, lacus ipsum tristique ipsum, et sollicitudin erat enim sit amet tellus. Maecenas dignissim accumsan leo ac vehicula.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Proeficiencies:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSe-ww-vdY">
+                                        <rect key="frame" x="126.33333333333334" y="378.66666666666669" width="106.33333333333334" height="92"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="11" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GVt-Oj-4tg">
+                                        <rect key="frame" x="0.0" y="470.66666666666669" width="359" height="80.666666666666686"/>
+                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas nec nisi ut fringilla. Quisque mollis massa in dictum dignissim. In aliquam pharetra eleifend. Sed dignissim neque eget metus porta, a eleifend turpis maximus. Aliquam bibendum arcu at mi lobortis mollis. Fusce varius, libero cursus pretium finibus, lacus ipsum tristique ipsum, et sollicitudin erat enim sit amet tellus. Maecenas dignissim accumsan leo ac vehicula.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saving Throws:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7FT-DT-hhh">
+                                        <rect key="frame" x="124.33333333333334" y="551.33333333333337" width="110.66666666666666" height="92"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="afP-5L-96s">
+                                        <rect key="frame" x="0.0" y="643.33333333333337" width="359" height="80.666666666666629"/>
+                                        <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi egestas nec nisi ut fringilla. Quisque mollis massa in dictum dignissim. In aliquam pharetra eleifend. Sed dignissim neque eget metus porta, a eleifend turpis maximus. Aliquam bibendum arcu at mi lobortis mollis. Fusce varius, libero cursus pretium finibus, lacus ipsum tristique ipsum, et sollicitudin erat enim sit amet tellus. Maecenas dignissim accumsan leo ac vehicula.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="D3O-lM-sI3" firstAttribute="trailing" secondItem="Yk3-Wp-bwj" secondAttribute="trailing" constant="8" id="HtQ-tU-Naz"/>
+                            <constraint firstItem="Yk3-Wp-bwj" firstAttribute="bottom" secondItem="D3O-lM-sI3" secondAttribute="bottom" id="tSX-dw-hkm"/>
+                            <constraint firstItem="Yk3-Wp-bwj" firstAttribute="leading" secondItem="D3O-lM-sI3" secondAttribute="leading" constant="8" id="xUd-5X-OVJ"/>
+                            <constraint firstItem="Yk3-Wp-bwj" firstAttribute="top" secondItem="D3O-lM-sI3" secondAttribute="top" id="yu8-oV-a1D"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="D3O-lM-sI3"/>
+                    </view>
+                    <connections>
+                        <outlet property="classNameLabel" destination="Pi8-Ne-9Jh" id="cY9-km-VpU"/>
+                        <outlet property="hitdieLabel" destination="rx7-JF-D06" id="nDq-5z-KXA"/>
+                        <outlet property="pickProfLabel" destination="n8z-n6-oKV" id="Pp5-2a-jvw"/>
+                        <outlet property="profChoicesLabel" destination="SrX-HS-rgI" id="cab-E1-FR4"/>
+                        <outlet property="profLabel" destination="GVt-Oj-4tg" id="PYT-1n-heL"/>
+                        <outlet property="savingLabel" destination="afP-5L-96s" id="3m8-2J-MfF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xqV-GM-eII" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-21.600000000000001" y="-1103.2019704433499"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="HWq-GB-6tJ">

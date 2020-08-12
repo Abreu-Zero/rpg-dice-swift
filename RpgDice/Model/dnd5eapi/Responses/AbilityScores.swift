@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AbilityScores: Codable{
+struct AbilityScores: Codable, Category{
     
     let id: String
     let index: String

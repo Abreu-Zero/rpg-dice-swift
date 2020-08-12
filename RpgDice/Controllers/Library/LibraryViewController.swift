@@ -17,7 +17,8 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var results: [Result] = []
     let linkedList = LinkedList()
-    var toSend: AbilityScores?
+    var toSend: Category?
+    var category: String = ""
     
     //MARK: pickerVIew funcs
     
@@ -34,6 +35,7 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
        }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        category = linkedList.index(index: row)!.title
         DndAPI.requestBase(endpoint: linkedList.index(index: row)!.value) { (result, error) in
             guard let result = result else{
                 return
@@ -59,14 +61,21 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
        }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        DndAPI.categoryRequest(url: results[indexPath.row].url) { (result, error) in
+        DndAPI.categoryRequest(url: results[indexPath.row].url, category: self.category) { (result, error) in
             guard let result = result else{
                 print(error!)
                 return
             }
             self.toSend = result
             DispatchQueue.main.async {
-                self.performSegue(withIdentifier: "openBook", sender: self)
+                switch self.category{
+                case "Abilities":
+                    self.performSegue(withIdentifier: "openBook", sender: self)
+                case "Classes":
+                    self.performSegue(withIdentifier: "openClass", sender: self)
+                default:
+                    self.performSegue(withIdentifier: "openBook", sender: self)
+                }
             }
         }
     }
@@ -98,8 +107,13 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "openBook"{
-        let destination = segue.destination as! AbilitiesBookViewController
-        destination.ability = self.toSend!
+            let destination = segue.destination as! AbilitiesBookViewController
+            destination.ability = self.toSend! as? AbilityScores
+        }
+        
+        if segue.identifier == "openClass"{
+            let destination = segue.destination as! ClassesBookViewController
+            destination.dndClass = self.toSend as? ClassResponse
         }
     }
 }

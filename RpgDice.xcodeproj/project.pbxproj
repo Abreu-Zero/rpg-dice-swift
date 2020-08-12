@@ -11,9 +11,12 @@
 		992A0C2324E1CA2C00289108 /* BaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A0C2224E1CA2C00289108 /* BaseResult.swift */; };
 		992A0C2524E1CBE400289108 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A0C2424E1CBE400289108 /* LibraryViewController.swift */; };
 		993C15E824E40983007B8376 /* AbilitiesBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C15E724E40983007B8376 /* AbilitiesBookViewController.swift */; };
+		993C15EA24E42F14007B8376 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C15E924E42F14007B8376 /* Category.swift */; };
+		993C15EC24E42F2A007B8376 /* ClassResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C15EB24E42F2A007B8376 /* ClassResponse.swift */; };
 		9970AA4E24E054510087C25F /* RpgDice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9970AA4C24E054510087C25F /* RpgDice.xcdatamodeld */; };
 		9970AA5124E054FA0087C25F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9970AA5024E054FA0087C25F /* DataController.swift */; };
 		9970AA5324E055A90087C25F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9970AA5224E055A90087C25F /* FirstViewController.swift */; };
+		99A11FA124E432370076E6D3 /* ClassesBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A11FA024E432370076E6D3 /* ClassesBookViewController.swift */; };
 		99AB9E5C24E3F3EB00D59A8F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB9E5B24E3F3EB00D59A8F /* LinkedList.swift */; };
 		99AB9E5F24E4024D00D59A8F /* AbilityScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB9E5E24E4024D00D59A8F /* AbilityScores.swift */; };
 		99C7978D24E0309A005C903E /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7978C24E0309A005C903E /* ResultsViewController.swift */; };
@@ -50,10 +53,13 @@
 		992A0C2224E1CA2C00289108 /* BaseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResult.swift; sourceTree = "<group>"; };
 		992A0C2424E1CBE400289108 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		993C15E724E40983007B8376 /* AbilitiesBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilitiesBookViewController.swift; sourceTree = "<group>"; };
+		993C15E924E42F14007B8376 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		993C15EB24E42F2A007B8376 /* ClassResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassResponse.swift; sourceTree = "<group>"; };
 		9970AA4D24E054510087C25F /* RpgDice.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = RpgDice.xcdatamodel; sourceTree = "<group>"; };
 		9970AA5024E054FA0087C25F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		9970AA5224E055A90087C25F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		9970FB5324E02A4400E8FB63 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		99A11FA024E432370076E6D3 /* ClassesBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesBookViewController.swift; sourceTree = "<group>"; };
 		99AB9E5B24E3F3EB00D59A8F /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		99AB9E5E24E4024D00D59A8F /* AbilityScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityScores.swift; sourceTree = "<group>"; };
 		99C7978C24E0309A005C903E /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
@@ -122,12 +128,9 @@
 		9970FB5024E01C1B00E8FB63 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				99E92D6124819E9200188E04 /* DicesViewController.swift */,
-				99C7978C24E0309A005C903E /* ResultsViewController.swift */,
 				9970AA5224E055A90087C25F /* FirstViewController.swift */,
-				99DEFB1324E05847006DAE22 /* HistoryViewController.swift */,
-				992A0C2424E1CBE400289108 /* LibraryViewController.swift */,
-				993C15E724E40983007B8376 /* AbilitiesBookViewController.swift */,
+				99A11FA324E432450076E6D3 /* Dice */,
+				99A11FA224E4323C0076E6D3 /* Library */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -142,11 +145,33 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		99A11FA224E4323C0076E6D3 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				992A0C2424E1CBE400289108 /* LibraryViewController.swift */,
+				993C15E724E40983007B8376 /* AbilitiesBookViewController.swift */,
+				99A11FA024E432370076E6D3 /* ClassesBookViewController.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		99A11FA324E432450076E6D3 /* Dice */ = {
+			isa = PBXGroup;
+			children = (
+				99E92D6124819E9200188E04 /* DicesViewController.swift */,
+				99C7978C24E0309A005C903E /* ResultsViewController.swift */,
+				99DEFB1324E05847006DAE22 /* HistoryViewController.swift */,
+			);
+			path = Dice;
+			sourceTree = "<group>";
+		};
 		99AB9E5D24E4023200D59A8F /* Responses */ = {
 			isa = PBXGroup;
 			children = (
 				992A0C2224E1CA2C00289108 /* BaseResult.swift */,
 				99AB9E5E24E4024D00D59A8F /* AbilityScores.swift */,
+				993C15EB24E42F2A007B8376 /* ClassResponse.swift */,
+				993C15E924E42F14007B8376 /* Category.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -336,6 +361,7 @@
 			files = (
 				992A0C2124E1C81E00289108 /* DndAPI.swift in Sources */,
 				992A0C2524E1CBE400289108 /* LibraryViewController.swift in Sources */,
+				993C15EC24E42F2A007B8376 /* ClassResponse.swift in Sources */,
 				992A0C2324E1CA2C00289108 /* BaseResult.swift in Sources */,
 				993C15E824E40983007B8376 /* AbilitiesBookViewController.swift in Sources */,
 				99E92D6224819E9200188E04 /* DicesViewController.swift in Sources */,
@@ -344,7 +370,9 @@
 				99AB9E5C24E3F3EB00D59A8F /* LinkedList.swift in Sources */,
 				99E92D6024819E9200188E04 /* SceneDelegate.swift in Sources */,
 				99C7978D24E0309A005C903E /* ResultsViewController.swift in Sources */,
+				99A11FA124E432370076E6D3 /* ClassesBookViewController.swift in Sources */,
 				9970AA4E24E054510087C25F /* RpgDice.xcdatamodeld in Sources */,
+				993C15EA24E42F14007B8376 /* Category.swift in Sources */,
 				9970AA5324E055A90087C25F /* FirstViewController.swift in Sources */,
 				99AB9E5F24E4024D00D59A8F /* AbilityScores.swift in Sources */,
 				99DEFB1424E05847006DAE22 /* HistoryViewController.swift in Sources */,

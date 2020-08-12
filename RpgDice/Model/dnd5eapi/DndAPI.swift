@@ -70,7 +70,7 @@ public class DndAPI{
         task.resume()
     }
     
-    class func categoryRequest(url: String, completionHandler: @escaping (AbilityScores?, Error?) -> Void){
+    class func categoryRequest(url: String, category: String, completionHandler: @escaping (Category?, Error?) -> Void){
         
         //TODO: create a switch to handle the 6 categories
         //TODO: change the return (completion) to String array to use in text labels
@@ -88,8 +88,19 @@ public class DndAPI{
             let decoder = JSONDecoder()
             do
             {
-                let data = try decoder.decode(AbilityScores.self, from: data)
-                completionHandler(data, nil)
+                switch category{
+                case "Abilities":
+                    let result = try decoder.decode(AbilityScores.self, from: data)
+                    completionHandler(result, nil)
+                    
+                case "Classes":
+                    let result = try decoder.decode(ClassResponse.self, from: data)
+                    completionHandler(result, nil)
+                default:
+                    return
+                }
+                
+                
             }
             catch
             {
