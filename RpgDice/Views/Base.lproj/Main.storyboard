@@ -7,7 +7,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Library View Controller-->
+        <!--Library-->
         <scene sceneID="DIE-Lg-F9S">
             <objects>
                 <viewController id="cry-h0-Kfn" customClass="LibraryViewController" customModule="RpgDice" customModuleProvider="target" sceneMemberID="viewController">
@@ -18,23 +18,31 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gY2-0A-ddH">
                                 <rect key="frame" x="0.0" y="88" width="375" height="216"/>
                             </pickerView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7tl-5s-x5v">
+                                <rect key="frame" x="16" y="304" width="343" height="474"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="gY2-0A-ddH" firstAttribute="leading" secondItem="HpI-Ug-rcD" secondAttribute="leading" id="1RC-8E-Rm0"/>
+                            <constraint firstItem="HpI-Ug-rcD" firstAttribute="bottom" secondItem="7tl-5s-x5v" secondAttribute="bottom" id="6Lu-vs-6RL"/>
+                            <constraint firstItem="HpI-Ug-rcD" firstAttribute="trailing" secondItem="7tl-5s-x5v" secondAttribute="trailing" constant="16" id="CVU-gM-ylf"/>
                             <constraint firstItem="HpI-Ug-rcD" firstAttribute="trailing" secondItem="gY2-0A-ddH" secondAttribute="trailing" id="Cbv-1L-bt5"/>
+                            <constraint firstItem="7tl-5s-x5v" firstAttribute="top" secondItem="gY2-0A-ddH" secondAttribute="bottom" id="KuF-nf-7qn"/>
+                            <constraint firstItem="7tl-5s-x5v" firstAttribute="leading" secondItem="HpI-Ug-rcD" secondAttribute="leading" constant="16" id="bwn-zC-lai"/>
                             <constraint firstItem="gY2-0A-ddH" firstAttribute="top" secondItem="HpI-Ug-rcD" secondAttribute="top" id="jvV-W9-Z9Q"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HpI-Ug-rcD"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Wpf-7x-b36"/>
+                    <navigationItem key="navigationItem" title="Library" id="Wpf-7x-b36"/>
                     <connections>
                         <outlet property="picker" destination="gY2-0A-ddH" id="jO8-xl-qON"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0I0-Ts-Sc7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="689" y="-394"/>
+            <point key="canvasLocation" x="688.79999999999995" y="-394.58128078817737"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="HWq-GB-6tJ">
@@ -87,7 +95,7 @@
             </objects>
             <point key="canvasLocation" x="-181.59999999999999" y="111.57635467980296"/>
         </scene>
-        <!--Dices View Controller-->
+        <!--Dice-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="DicesViewController" customModule="RpgDice" customModuleProvider="target" sceneMemberID="viewController">
@@ -207,7 +215,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XK2-c2-ww0"/>
+                    <navigationItem key="navigationItem" title="Dice" id="XK2-c2-ww0"/>
                     <value key="contentSizeForViewInPopover" type="size" width="414" height="896"/>
                     <connections>
                         <segue destination="Lft-7F-WsU" kind="show" identifier="rollResult" id="0fE-KG-nYv"/>

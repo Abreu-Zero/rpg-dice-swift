@@ -8,14 +8,12 @@
 
 import Foundation
 
-class DndAPI{
+public class DndAPI{
     
 
     static let baseURL: String = "https://www.dnd5eapi.co"
 
     enum Endpoint{
-        
-        
         
         case abilityScores
         case classes
