@@ -20,6 +20,31 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
     var toSend: Category?
     var category: String = ""
     
+    //MARK: viewDid funcs
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        picker.dataSource = self
+        picker.delegate = self
+        picker.reloadAllComponents()
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        //Populating the LinkedList to use in the pickerView
+        let nodeAbility = Node(value: DndAPI.Endpoint.abilityScores, title: "Abilities")
+        linkedList.append(node: nodeAbility)
+        let nodeClasses = Node(value: DndAPI.Endpoint.classes, title: "Classes")
+        linkedList.append(node: nodeClasses)
+        let nodeEquip = Node(value: DndAPI.Endpoint.equipment, title: "Equipment")
+        linkedList.append(node: nodeEquip)
+        let nodeMonsters = Node(value: DndAPI.Endpoint.monsters, title: "Monsters")
+        linkedList.append(node: nodeMonsters)
+        let nodeRaces = Node(value: DndAPI.Endpoint.races, title: "Races")
+        linkedList.append(node: nodeRaces)
+        let nodeSpells = Node(value: DndAPI.Endpoint.spells, title: "Spells")
+        linkedList.append(node: nodeSpells)
+    }
+    
     //MARK: pickerVIew funcs
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -87,30 +112,7 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
         }
     }
     
-    //MARK: viewDid funcs
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        picker.dataSource = self
-        picker.delegate = self
-        picker.reloadAllComponents()
-        tableView.delegate = self
-        tableView.dataSource = self
-        
-        //Populating the LinkedList to use in the pickerView
-        let nodeAbility = Node(value: DndAPI.Endpoint.abilityScores, title: "Abilities")
-        linkedList.append(node: nodeAbility)
-        let nodeClasses = Node(value: DndAPI.Endpoint.classes, title: "Classes")
-        linkedList.append(node: nodeClasses)
-        let nodeEquip = Node(value: DndAPI.Endpoint.equipment, title: "Equipment")
-        linkedList.append(node: nodeEquip)
-        let nodeMonsters = Node(value: DndAPI.Endpoint.monsters, title: "Monsters")
-        linkedList.append(node: nodeMonsters)
-        let nodeRaces = Node(value: DndAPI.Endpoint.races, title: "Races")
-        linkedList.append(node: nodeRaces)
-        let nodeSpells = Node(value: DndAPI.Endpoint.spells, title: "Spells")
-        linkedList.append(node: nodeSpells)
-    }
+    //MARK: Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "openBook"{

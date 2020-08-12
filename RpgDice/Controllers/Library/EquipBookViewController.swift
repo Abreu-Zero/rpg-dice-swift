@@ -12,6 +12,27 @@ import UIKit
 
 class EquipBookViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
+    @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var costLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
+    
+    var category: EquipmentResponse?
+    var equips: [Equipment] = []
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        picker.delegate = self
+        picker.dataSource = self
+        for equip in category!.equipment{
+            equips.append(equip)
+        }
+        
+        picker.reloadAllComponents()
+    }
+    
+    //MARK: picker funcs
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -39,23 +60,6 @@ class EquipBookViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         }
     }
 
-    @IBOutlet weak var picker: UIPickerView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var costLabel: UILabel!
-    @IBOutlet weak var descLabel: UILabel!
-    
-    var category: EquipmentResponse?
-    var equips: [Equipment] = []
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        picker.delegate = self
-        picker.dataSource = self
-        for equip in category!.equipment{
-            equips.append(equip)
-        }
-        
-        picker.reloadAllComponents()
-    }
+
 
 }
