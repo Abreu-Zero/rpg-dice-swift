@@ -8,11 +8,12 @@
 
 import UIKit
 
-class LibraryViewController: UIViewController, UITableViewDelegate, UIPickerViewDelegate, UIPickerViewDataSource{
+class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource{
     
     //MARK: var lets and outlets
     
     @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var tableView: UITableView!
     
     var results: [Result] = []
     let linkedList = LinkedList()
@@ -36,11 +37,25 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UIPickerView
             guard let result = result else{
                 return
             }
-            print(result)
+            self.results = result.results
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
     
     //MARK: tableView funcs
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return results.count
+       }
+       
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "libraryCell")
+        cell?.textLabel?.text = results[indexPath.row].name
+        
+        return cell!
+       }
     
     //MARK: viewDid funcs
 
@@ -49,6 +64,8 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UIPickerView
         picker.dataSource = self
         picker.delegate = self
         picker.reloadAllComponents()
+        tableView.delegate = self
+        tableView.dataSource = self
         
         //Populating the LinkedList to use in the pickerView
         let nodeAbility = Node(value: DndAPI.Endpoint.abilityScores, title: "Abilities")
@@ -63,19 +80,5 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UIPickerView
         linkedList.append(node: nodeRaces)
         let nodeSpells = Node(value: DndAPI.Endpoint.spells, title: "Spells")
         linkedList.append(node: nodeSpells)
-        
-        DndAPI.requestBase(endpoint: .monsters) { (result, error) in
-                    guard let result = result else{
-                        print(error!)
-                        return
-                    }
-            print(result)
-        }
     }
-        
-        //TODO: Dropdown menu works
-        //TODO: add activityIndicator
-        //TODO: UI responds to requests
-
-    
 }
