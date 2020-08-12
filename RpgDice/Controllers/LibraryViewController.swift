@@ -98,7 +98,7 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "openBook"{
-        let destination = segue.destination as! BookViewController
+        let destination = segue.destination as! AbilitiesBookViewController
         destination.ability = self.toSend!
         }
     }
