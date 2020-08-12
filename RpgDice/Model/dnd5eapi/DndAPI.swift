@@ -92,12 +92,12 @@ public class DndAPI{
                 case "Abilities":
                     let result = try decoder.decode(AbilityScores.self, from: data)
                     completionHandler(result, nil)
-                    
                 case "Classes":
                     let result = try decoder.decode(ClassResponse.self, from: data)
                     completionHandler(result, nil)
                 case "Equipment":
-                    return
+                    let result = try decoder.decode(EquipmentResponse.self, from: data)
+                    completionHandler(result, nil)
                 default:
                     return
                 }

@@ -62,6 +62,7 @@
                         <outlet property="tableView" destination="7tl-5s-x5v" id="Fcm-0C-lWM"/>
                         <segue destination="uC5-Fb-EAe" kind="presentation" identifier="openBook" id="ibs-ws-Yqa"/>
                         <segue destination="hI3-1d-Cdh" kind="presentation" identifier="openClass" id="46O-AH-eJ6"/>
+                        <segue destination="jC9-sj-0p8" kind="presentation" identifier="openEquips" id="tk2-p6-atu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0I0-Ts-Sc7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -221,6 +222,41 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xqV-GM-eII" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-21.600000000000001" y="-1103.2019704433499"/>
+        </scene>
+        <!--Equip Book View Controller-->
+        <scene sceneID="Rpl-Fx-wJx">
+            <objects>
+                <viewController id="jC9-sj-0p8" customClass="EquipBookViewController" customModule="RpgDice" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="H4m-Jr-6av">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <pickerView contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Iee-d1-Vik">
+                                <rect key="frame" x="0.0" y="20" width="375" height="162"/>
+                            </pickerView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="lBo-eW-B8c">
+                                <rect key="frame" x="16" y="236" width="343" height="488"/>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lBo-eW-B8c" firstAttribute="leading" secondItem="BGD-rg-fWF" secondAttribute="leading" constant="16" id="02y-jq-aqh"/>
+                            <constraint firstItem="lBo-eW-B8c" firstAttribute="top" secondItem="Iee-d1-Vik" secondAttribute="bottom" id="FWe-ei-dme"/>
+                            <constraint firstItem="BGD-rg-fWF" firstAttribute="bottom" secondItem="lBo-eW-B8c" secondAttribute="bottom" id="HFl-cw-UVc"/>
+                            <constraint firstItem="BGD-rg-fWF" firstAttribute="trailing" secondItem="lBo-eW-B8c" secondAttribute="trailing" constant="16" id="NIM-5v-m5G"/>
+                            <constraint firstItem="Iee-d1-Vik" firstAttribute="leading" secondItem="BGD-rg-fWF" secondAttribute="leading" id="Zu7-eE-UvZ"/>
+                            <constraint firstItem="Iee-d1-Vik" firstAttribute="top" secondItem="BGD-rg-fWF" secondAttribute="top" constant="20" id="dOa-KK-bOU"/>
+                            <constraint firstItem="BGD-rg-fWF" firstAttribute="trailing" secondItem="Iee-d1-Vik" secondAttribute="trailing" id="mJz-t2-Jzd"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="BGD-rg-fWF"/>
+                    </view>
+                    <connections>
+                        <outlet property="picker" destination="Iee-d1-Vik" id="wdr-8p-5mR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jmj-nb-2s9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="664.79999999999995" y="-1102.4630541871923"/>
         </scene>
         <!--First View Controller-->
         <scene sceneID="HWq-GB-6tJ">

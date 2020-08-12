@@ -78,6 +78,8 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
                     self.performSegue(withIdentifier: "openBook", sender: self)
                 case "Classes":
                     self.performSegue(withIdentifier: "openClass", sender: self)
+                case "Equipment":
+                    self.performSegue(withIdentifier: "openEquips", sender: self)
                 default:
                     self.performSegue(withIdentifier: "openBook", sender: self)
                 }
@@ -100,7 +102,7 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
         linkedList.append(node: nodeAbility)
         let nodeClasses = Node(value: DndAPI.Endpoint.classes, title: "Classes")
         linkedList.append(node: nodeClasses)
-        let nodeEquip = Node(value: DndAPI.Endpoint.equipment, title: "Equiment")
+        let nodeEquip = Node(value: DndAPI.Endpoint.equipment, title: "Equipment")
         linkedList.append(node: nodeEquip)
         let nodeMonsters = Node(value: DndAPI.Endpoint.monsters, title: "Monsters")
         linkedList.append(node: nodeMonsters)
@@ -119,6 +121,11 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
         if segue.identifier == "openClass"{
             let destination = segue.destination as! ClassesBookViewController
             destination.dndClass = self.toSend as? ClassResponse
+        }
+        
+        if segue.identifier == "openEquips"{
+            let destination = segue.destination as! EquipBookViewController
+            destination.category = self.toSend as? EquipmentResponse
         }
     }
 }

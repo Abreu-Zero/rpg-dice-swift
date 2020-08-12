@@ -16,6 +16,8 @@
 		9970AA4E24E054510087C25F /* RpgDice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9970AA4C24E054510087C25F /* RpgDice.xcdatamodeld */; };
 		9970AA5124E054FA0087C25F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9970AA5024E054FA0087C25F /* DataController.swift */; };
 		9970AA5324E055A90087C25F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9970AA5224E055A90087C25F /* FirstViewController.swift */; };
+		997EEFD324E4799500E95190 /* EquipmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997EEFD224E4799500E95190 /* EquipmentResponse.swift */; };
+		997EEFD524E47A8000E95190 /* EquipBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997EEFD424E47A8000E95190 /* EquipBookViewController.swift */; };
 		99A11FA124E432370076E6D3 /* ClassesBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A11FA024E432370076E6D3 /* ClassesBookViewController.swift */; };
 		99AB9E5C24E3F3EB00D59A8F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB9E5B24E3F3EB00D59A8F /* LinkedList.swift */; };
 		99AB9E5F24E4024D00D59A8F /* AbilityScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB9E5E24E4024D00D59A8F /* AbilityScores.swift */; };
@@ -59,6 +61,8 @@
 		9970AA5024E054FA0087C25F /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		9970AA5224E055A90087C25F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		9970FB5324E02A4400E8FB63 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		997EEFD224E4799500E95190 /* EquipmentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentResponse.swift; sourceTree = "<group>"; };
+		997EEFD424E47A8000E95190 /* EquipBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipBookViewController.swift; sourceTree = "<group>"; };
 		99A11FA024E432370076E6D3 /* ClassesBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesBookViewController.swift; sourceTree = "<group>"; };
 		99AB9E5B24E3F3EB00D59A8F /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		99AB9E5E24E4024D00D59A8F /* AbilityScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityScores.swift; sourceTree = "<group>"; };
@@ -150,6 +154,7 @@
 			children = (
 				992A0C2424E1CBE400289108 /* LibraryViewController.swift */,
 				993C15E724E40983007B8376 /* AbilitiesBookViewController.swift */,
+				997EEFD424E47A8000E95190 /* EquipBookViewController.swift */,
 				99A11FA024E432370076E6D3 /* ClassesBookViewController.swift */,
 			);
 			path = Library;
@@ -171,6 +176,7 @@
 				992A0C2224E1CA2C00289108 /* BaseResult.swift */,
 				99AB9E5E24E4024D00D59A8F /* AbilityScores.swift */,
 				993C15EB24E42F2A007B8376 /* ClassResponse.swift */,
+				997EEFD224E4799500E95190 /* EquipmentResponse.swift */,
 				993C15E924E42F14007B8376 /* Category.swift */,
 			);
 			path = Responses;
@@ -366,11 +372,13 @@
 				993C15E824E40983007B8376 /* AbilitiesBookViewController.swift in Sources */,
 				99E92D6224819E9200188E04 /* DicesViewController.swift in Sources */,
 				9970AA5124E054FA0087C25F /* DataController.swift in Sources */,
+				997EEFD324E4799500E95190 /* EquipmentResponse.swift in Sources */,
 				99E92D5E24819E9200188E04 /* AppDelegate.swift in Sources */,
 				99AB9E5C24E3F3EB00D59A8F /* LinkedList.swift in Sources */,
 				99E92D6024819E9200188E04 /* SceneDelegate.swift in Sources */,
 				99C7978D24E0309A005C903E /* ResultsViewController.swift in Sources */,
 				99A11FA124E432370076E6D3 /* ClassesBookViewController.swift in Sources */,
+				997EEFD524E47A8000E95190 /* EquipBookViewController.swift in Sources */,
 				9970AA4E24E054510087C25F /* RpgDice.xcdatamodeld in Sources */,
 				993C15EA24E42F14007B8376 /* Category.swift in Sources */,
 				9970AA5324E055A90087C25F /* FirstViewController.swift in Sources */,
