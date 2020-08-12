@@ -6,6 +6,8 @@
 //  Copyright © 2020 Henrique Abreu. All rights reserved.
 //
 // Special thanks to Chris Pilcher and  Matthijs Hollemans for the tutorial on Linked Lists!
+// tbh a list would probably sort my problems, but this is cooler
+
 
 import Foundation
 
@@ -47,6 +49,7 @@ public class LinkedList {
       return nil
     }
 }
+
 public class Node{
     var next: Node?
     let value: DndAPI.Endpoint

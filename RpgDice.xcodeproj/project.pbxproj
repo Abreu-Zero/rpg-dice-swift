@@ -14,6 +14,7 @@
 		9970AA5124E054FA0087C25F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9970AA5024E054FA0087C25F /* DataController.swift */; };
 		9970AA5324E055A90087C25F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9970AA5224E055A90087C25F /* FirstViewController.swift */; };
 		99AB9E5C24E3F3EB00D59A8F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB9E5B24E3F3EB00D59A8F /* LinkedList.swift */; };
+		99AB9E5F24E4024D00D59A8F /* AbilityScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB9E5E24E4024D00D59A8F /* AbilityScores.swift */; };
 		99C7978D24E0309A005C903E /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C7978C24E0309A005C903E /* ResultsViewController.swift */; };
 		99DEFB1424E05847006DAE22 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99DEFB1324E05847006DAE22 /* HistoryViewController.swift */; };
 		99E92D5E24819E9200188E04 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E92D5D24819E9200188E04 /* AppDelegate.swift */; };
@@ -52,6 +53,7 @@
 		9970AA5224E055A90087C25F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		9970FB5324E02A4400E8FB63 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		99AB9E5B24E3F3EB00D59A8F /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
+		99AB9E5E24E4024D00D59A8F /* AbilityScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityScores.swift; sourceTree = "<group>"; };
 		99C7978C24E0309A005C903E /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 		99DEFB1324E05847006DAE22 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 		99E92D5A24819E9200188E04 /* RpgDice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RpgDice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,7 +101,7 @@
 			isa = PBXGroup;
 			children = (
 				992A0C2024E1C81E00289108 /* DndAPI.swift */,
-				992A0C2224E1CA2C00289108 /* BaseResult.swift */,
+				99AB9E5D24E4023200D59A8F /* Responses */,
 			);
 			path = dnd5eapi;
 			sourceTree = "<group>";
@@ -135,6 +137,15 @@
 				99E92D6824819E9800188E04 /* LaunchScreen.storyboard */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		99AB9E5D24E4023200D59A8F /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				992A0C2224E1CA2C00289108 /* BaseResult.swift */,
+				99AB9E5E24E4024D00D59A8F /* AbilityScores.swift */,
+			);
+			path = Responses;
 			sourceTree = "<group>";
 		};
 		99E92D5124819E9100188E04 = {
@@ -331,6 +342,7 @@
 				99C7978D24E0309A005C903E /* ResultsViewController.swift in Sources */,
 				9970AA4E24E054510087C25F /* RpgDice.xcdatamodeld in Sources */,
 				9970AA5324E055A90087C25F /* FirstViewController.swift in Sources */,
+				99AB9E5F24E4024D00D59A8F /* AbilityScores.swift in Sources */,
 				99DEFB1424E05847006DAE22 /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
