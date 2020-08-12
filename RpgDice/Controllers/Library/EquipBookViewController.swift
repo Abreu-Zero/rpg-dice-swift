@@ -22,8 +22,25 @@ class EquipBookViewController: UIViewController, UIPickerViewDelegate, UIPickerV
         return equips[row].name
     }
     
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        DndAPI.equipRequest(url: equips[row].url) { (item, error) in
+            guard let item = item else{
+                print(error!)
+                return
+            }
+            DispatchQueue.main.async {
+                self.nameLabel.text = item.name
+                self.costLabel.text = String(item.cost.quantity) + item.cost.unit
+                self.descLabel.text = item.itemDescription[0]
+            }
+            
+        }
+    }
 
     @IBOutlet weak var picker: UIPickerView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var costLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
     
     var category: EquipmentResponse?
     var equips: [Equipment] = []
