@@ -43,6 +43,8 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
         linkedList.append(node: nodeRaces)
         let nodeSpells = Node(value: DndAPI.Endpoint.spells, title: "Spells")
         linkedList.append(node: nodeSpells)
+        
+        handleDndRequest(row: 0)
     }
     
     //MARK: pickerVIew funcs
@@ -62,19 +64,7 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.results = []
         category = linkedList.index(index: row)!.title
-        DndAPI.requestBase(endpoint: linkedList.index(index: row)!.value) { (result, error) in
-            guard let result = result else{
-                return
-            }
-            for r in result.results{
-                if r.url != nil{
-                    self.results.append(r)
-                }
-            }
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
-        }
+        handleDndRequest(row: row)
     }
     
     //MARK: tableView funcs
@@ -128,6 +118,22 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
         if segue.identifier == "openEquips"{
             let destination = segue.destination as! EquipBookViewController
             destination.category = self.toSend as? EquipmentResponse
+        }
+    }
+    
+    func handleDndRequest(row: Int){
+        DndAPI.requestBase(endpoint: linkedList.index(index: row)!.value) { (result, error) in
+            guard let result = result else{
+                return
+            }
+            for r in result.results{
+                if r.url != nil{
+                    self.results.append(r)
+                }
+            }
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
         }
     }
 }
