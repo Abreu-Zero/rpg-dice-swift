@@ -52,9 +52,9 @@ class EquipBookViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                 return
             }
             DispatchQueue.main.async {
-                self.nameLabel.text = item.name
-                self.costLabel.text = String(item.cost.quantity) + item.cost.unit
-                self.descLabel.text = item.itemDescription[0]
+                self.nameLabel.text = "Name: \(item.name)"
+                self.costLabel.text = "Cost: \(String(item.cost.quantity))\(item.cost.unit)"
+                self.descLabel.text = "Description: \(item.itemDescription[0])"
             }
             
         }
