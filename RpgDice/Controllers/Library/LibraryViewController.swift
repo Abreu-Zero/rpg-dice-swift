@@ -12,6 +12,7 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     //MARK: var lets and outlets
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var picker: UIPickerView!
     @IBOutlet weak var tableView: UITableView!
     
@@ -62,7 +63,6 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
        }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        self.results = []
         category = linkedList.index(index: row)!.title
         handleDndRequest(row: row)
     }
@@ -122,6 +122,8 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func handleDndRequest(row: Int){
+        activityIndicator.startAnimating()
+        self.results = []
         DndAPI.requestBase(endpoint: linkedList.index(index: row)!.value) { (result, error) in
             guard let result = result else{
                 return
@@ -133,6 +135,7 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
             }
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.activityIndicator.stopAnimating()
             }
         }
     }

@@ -8,7 +8,8 @@
 
 import UIKit
 
-//TODO: find a way to filter the requests and create a responsive UI accordingly
+
+//TODO: add activityIndicator for requests
 
 class EquipBookViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
@@ -22,6 +23,7 @@ class EquipBookViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var typeLabel: UILabel!
     @IBOutlet weak var rangeLabel: UILabel!
     @IBOutlet weak var damageLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var category: EquipmentResponse?
     var equips: [Equipment] = []
@@ -65,12 +67,14 @@ class EquipBookViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     func populateTheStackView(row: Int){
+        self.activityIndicator.startAnimating()
         DndAPI.equipRequest(url: equips[row].url) { (item, error) in
             guard let item = item else{
                 print(error!)
                 return
             }
             DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
                 //Setting the base text
                 self.nameLabel.text = "Name: \(item.name)"
                 self.costLabel.text = "Cost: \(String(item.cost.quantity))\(item.cost.unit)"
@@ -97,7 +101,6 @@ class EquipBookViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                 
                 guard let armourClass = item.armorClass else{return}
                 self.classLabel.text = "Class: \(armourClass.base)"
-                
             }
             
         }
