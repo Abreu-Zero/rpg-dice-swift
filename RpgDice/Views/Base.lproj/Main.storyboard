@@ -235,20 +235,38 @@
                                 <rect key="frame" x="16" y="190" width="343" height="534"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DnP-dX-jXI">
-                                        <rect key="frame" x="149" y="0.0" width="45" height="178"/>
+                                        <rect key="frame" x="149" y="0.0" width="45" height="89"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cost" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="UkO-yJ-LZr">
-                                        <rect key="frame" x="153.66666666666666" y="178" width="35.666666666666657" height="178"/>
+                                        <rect key="frame" x="153.66666666666666" y="89" width="35.666666666666657" height="89"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weight" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V1H-rt-eJ3">
+                                        <rect key="frame" x="144.66666666666666" y="178" width="54" height="89"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hXZ-pS-ml6">
+                                        <rect key="frame" x="136.33333333333334" y="267" width="70.333333333333343" height="89"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Class Base" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P4U-k5-ioE">
+                                        <rect key="frame" x="129.66666666666666" y="356" width="83.666666666666657" height="89"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="18" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Z5T-7z-d2O">
-                                        <rect key="frame" x="127.66666666666666" y="356" width="87.666666666666657" height="178"/>
+                                        <rect key="frame" x="127.66666666666666" y="445" width="87.666666666666657" height="89"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -275,10 +293,13 @@
                         <viewLayoutGuide key="safeArea" id="BGD-rg-fWF"/>
                     </view>
                     <connections>
+                        <outlet property="catLabel" destination="hXZ-pS-ml6" id="lcz-YE-dPh"/>
+                        <outlet property="classLabel" destination="P4U-k5-ioE" id="F0W-xi-vnO"/>
                         <outlet property="costLabel" destination="UkO-yJ-LZr" id="Ccv-m1-lnL"/>
                         <outlet property="descLabel" destination="Z5T-7z-d2O" id="f5e-AM-8ri"/>
                         <outlet property="nameLabel" destination="DnP-dX-jXI" id="BbV-FO-e75"/>
                         <outlet property="picker" destination="Iee-d1-Vik" id="wdr-8p-5mR"/>
+                        <outlet property="weightLabel" destination="V1H-rt-eJ3" id="9wR-yV-qYT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jmj-nb-2s9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -40,8 +40,19 @@ struct Item: Codable{
     let index: String
     let name: String
     let equipment: [String : String]
+    
+    // Armor exc
+    let armor: String?
+    let armorClass: ArmorClass?
+    let strenghtMin: Int?
+    let stealthDis: Bool?
+    
+    // Tool exc
     let tool: String?
+    
+    // Gear exc
     let gear: String?
+    
     let cost: ItemCost
     let weight: Float?
     let itemDescription: [String]?
@@ -53,6 +64,10 @@ struct Item: Codable{
         case index
         case name
         case equipment = "equipment_category"
+        case armor = "armor_category"
+        case armorClass = "armor_class"
+        case strenghtMin = "str_minimum"
+        case stealthDis = "stealth_disadvantage"
         case tool = "tool_category"
         case gear = "gear_category"
         case cost
@@ -66,4 +81,19 @@ struct Item: Codable{
 struct ItemCost: Codable{
     let quantity: Int
     let unit: String
+}
+
+struct ArmorClass: Codable{
+    
+    let base: Int
+    let dexBonus: Bool
+    let maxBonus: Int?
+    
+    enum CodingKeys: String, CodingKey{
+            
+        case base
+        case dexBonus = "dex_bonus"
+        case maxBonus = "max_bonus"
+        
+    }
 }

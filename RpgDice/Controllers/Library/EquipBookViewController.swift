@@ -16,6 +16,9 @@ class EquipBookViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var costLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var weightLabel: UILabel!
+    @IBOutlet weak var catLabel: UILabel!
+    @IBOutlet weak var classLabel: UILabel!
     
     var category: EquipmentResponse?
     var equips: [Equipment] = []
@@ -52,9 +55,26 @@ class EquipBookViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                 return
             }
             DispatchQueue.main.async {
+                //Setting the base text
                 self.nameLabel.text = "Name: \(item.name)"
                 self.costLabel.text = "Cost: \(String(item.cost.quantity))\(item.cost.unit)"
                 self.descLabel.text = "Description: \(item.itemDescription?[0] ?? "No Description")"
+                
+                //Hiding the optionals
+                self.weightLabel.text = ""
+                 self.catLabel.text = ""
+                self.classLabel.text = ""
+
+
+                //Using the optionals
+                guard let weight = item.weight else{return}
+                self.weightLabel.text = "Weight: \(weight)"
+
+                guard let category = item.armor else{return}
+                self.catLabel.text = "Category: \(category)"
+                
+                guard let armourClass = item.armorClass else{return}
+                self.classLabel.text = "Class: \(armourClass.base)"
             }
             
         }
