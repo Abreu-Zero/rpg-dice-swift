@@ -53,6 +53,16 @@ struct Item: Codable{
     // Gear exc
     let gear: String?
     
+    // Adventuring exc
+    let contents: [ContentAdnv]?
+    
+    // Weapon exc
+    let weaponCat: String?
+    let weaponRange: String?
+    let catRange: String?
+    let damage: Damage?
+    let range: [String : Float?]?
+    
     let cost: ItemCost
     let weight: Float?
     let itemDescription: [String]?
@@ -70,6 +80,12 @@ struct Item: Codable{
         case stealthDis = "stealth_disadvantage"
         case tool = "tool_category"
         case gear = "gear_category"
+        case contents
+        case weaponCat = "weapon_category"
+        case weaponRange = "weapon_range"
+        case catRange = "category_range"
+        case damage
+        case range
         case cost
         case weight
         case itemDescription = "desc"
@@ -95,5 +111,25 @@ struct ArmorClass: Codable{
         case dexBonus = "dex_bonus"
         case maxBonus = "max_bonus"
         
+    }
+}
+
+struct ContentAdnv: Codable{
+    let itemURL: String
+    let quantity: Int
+    
+    enum CodingKeys: String, CodingKey{
+        case itemURL = "item_url"
+        case quantity
+    }
+}
+
+struct Damage: Codable{
+    let damageDice: String
+    let damageType: [String : String]
+    
+    enum CodingKeys: String, CodingKey{
+        case damageDice = "damage_dice"
+        case damageType = "damage_type"
     }
 }

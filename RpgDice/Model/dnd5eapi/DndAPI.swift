@@ -112,9 +112,7 @@ public class DndAPI{
     }
     
     class func equipRequest(url: String, completionHandler: @escaping (Item?, Error?) -> Void){
-        
-        //TODO: implement switch statement in the same way as categoryRequest() so we can filter the results
-        
+                
         guard let endURL = URL(string: self.baseURL + url) else {return}
         let task = URLSession.shared.dataTask(with: endURL){(data, response, error) in
             guard let data = data else {
