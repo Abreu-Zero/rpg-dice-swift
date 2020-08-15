@@ -147,12 +147,12 @@ class MonstersBookViewController: UIViewController {
             for action in actions{
                 label.text! += "\n\n\(action.name)\n\nDescription: \(action.description)\n"
                 if action.attackBonus != nil {
-                    label.text! += "*ATK Bonus: \(action.attackBonus!)\n"
+                    label.text! += "-ATK Bonus: \(action.attackBonus!)\n"
                 }
                 if action.damage != nil {
                     for d in action.damage!{
-                        label.text! += "*Damage: \(d.damageDice)\n"
-                        label.text! += "*Type: \(d.damageType["name"]!)"
+                        label.text! += "-Damage: \(d.damageDice)\n"
+                        label.text! += "-Type: \(d.damageType["name"]!)"
                         label.numberOfLines += 10
                     }
                     
