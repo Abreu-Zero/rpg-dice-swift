@@ -44,16 +44,27 @@ class MonstersBookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        nameLabel.text = "Name: \(monster!.name)"
-        sizeLabel.text = "Size: \(monster!.size)"
-        typeLabel.text = "Type: \(monster!.monsterType)"
-        alignmentLabel.text = "Alignment: \(monster!.alignment)"
-        armorClassLabel.text = "Armor Class: \(monster!.armorClass)"
-        hpLabel.text = "HP: \(monster!.hitPoints)"
-        hitDiceLabel.text = "Hit Dice: \(monster!.hitDice)"
-        //TODO: Speed
-        speedLabel.text = "Speed: \n Swim: \(monster?.speed.swim)\nWalk: \(monster?.speed.walk)\nFly: \(monster?.speed.fly)"
+        
+        nameLabel.text = "\nName: \(monster!.name)"
+        sizeLabel.text = "\nSize: \(monster!.size)"
+        typeLabel.text = "\nType: \(monster!.monsterType)"
+        alignmentLabel.text = "\nAlignment: \(monster!.alignment)"
+        armorClassLabel.text = "\nArmor Class: \(monster!.armorClass)"
+        hpLabel.text = "\nHP: \(monster!.hitPoints)"
+        hitDiceLabel.text = "\nHit Dice: \(monster!.hitDice)"
+        
+        speedLabel.text = "\nSpeed: "
+        if let walk = monster?.speed.walk{
+            speedLabel.text! += "\nWalk: \(walk)"
+        }
+        if let swim = monster?.speed.swim{
+            speedLabel.text! += "\nSwim: \(swim)"
+        }
+        if let fly = monster?.speed.fly{
+            speedLabel.text! += "\nFly: \(fly)"
+        }
+        speedLabel.text! += "\n"
+        
         strLabel.text = "STR: \(monster!.strength)"
         dexLabel.text = "DEX: \(monster!.dexterity)"
         conLabel.text = "CON: \(monster!.constitution)"
@@ -62,70 +73,84 @@ class MonstersBookViewController: UIViewController {
         chaLabel.text = "CHA: \(monster!.charisma)"
         
         if let proficiency = monster?.proficiencies{
-            proficienciesLabel.text = ""
+            proficienciesLabel.text = "Proeficiencies:\n"
             for p in proficiency{
-                proficienciesLabel.text! += "\(p.name) Value: \(p.value)\n"
+                proficienciesLabel.text! += "\n\(p.name) Value: \(p.value)\n"
+                proficienciesLabel.numberOfLines += 2
             }
         }
         
-        checkResistance(label: damageVulnerabilitiesLabel, resistance: monster!.damageVulnerabilities)
-        checkResistance(label: damageResistencesLabel, resistance: monster!.damageResistences)
-        checkResistance(label: damageImmunitiesLabel, resistance:  monster!.damageImmunities)
+        checkResistance(label: damageVulnerabilitiesLabel, name: "Damage Vulnerabilities:", resistance: monster!.damageVulnerabilities)
+        checkResistance(label: damageResistencesLabel, name: "Damage Resistance:", resistance: monster!.damageResistences)
+        checkResistance(label: damageImmunitiesLabel, name: "Damage Immunities:", resistance:  monster!.damageImmunities)
         
-        conditionsImmunitiesLabel.text = ""
+        conditionsImmunitiesLabel.text = "Condition Immunities:"
         
         if monster?.conditionImmunities.count == 0{
-            conditionsImmunitiesLabel.text = "none"
+            conditionsImmunitiesLabel.text! += "\nnone"
         }else{
             for cond in monster!.conditionImmunities{
                  conditionsImmunitiesLabel.text! += "\(cond["name"]!)\n"
             }
         }
         
-        languagesLabel.text = "Languages: \(monster!.languages)"
-        challengeRatingLabel.text = "Challenge Rating: \(monster!.challangeRating)"
+        languagesLabel.text = "\nLanguages: \(monster!.languages)"
+        challengeRatingLabel.text = "Challenge Rating: \(Int(monster!.challangeRating))"
+        
+        specialAbilitiesLabel.text = "SPECIAL ABILITIES:"
         
         if monster?.specialAbilities?.count == 0{
-            specialAbilitiesLabel.text! += "none"
-
+            specialAbilitiesLabel.text! += "\nnone"
         } else{
-            specialAbilitiesLabel.text = ""
             for special in monster!.specialAbilities!{
-                specialAbilitiesLabel.text! += "\(special.name)\nDescription: \(special.desc)\n"
+                specialAbilitiesLabel.text! += "\n\n\(special.name)\n\nDescription: \(special.desc)\n"
+                specialAbilitiesLabel.numberOfLines += 10
             }
         }
-        
-        checkActions(label: actionsLabel, actions: monster!.actions!)
-        checkActions(label: legendaryActionsLabel, actions: monster!.legendaryActions!)
-        
-        
-        
-        
+        if let actions = monster?.actions{
+            checkActions(label: actionsLabel, name: "ACTIONS: ", actions: actions)
+
+        } else {
+            actionsLabel.text = ""
+        }
+        if let lActions = monster?.legendaryActions{
+            checkActions(label: legendaryActionsLabel, name: "LEGENDARY ACTIONS: ", actions: lActions)
+
+        }else{
+            legendaryActionsLabel.text = ""
+        }
     }
     
-    func checkResistance(label: UILabel, resistance: [String]){
-        label.text = ""
+    func checkResistance(label: UILabel, name: String, resistance: [String]){
+        label.text = name
         if resistance.count == 0{
-            label.text = "none"
+            label.text! += "\nnone"
         }
         
         for r in resistance{
-            label.text! += "\(r)\n"
+            label.text! += "\n\(r)"
+            label.numberOfLines += 1
         }
     }
     
-    func checkActions(label: UILabel, actions: [Action]){
+    func checkActions(label: UILabel, name: String, actions: [Action]){
+        label.text = name
+
         if actions.count == 0{
-            label.text = "none"
+            label.text! += "\nnone"
         } else{
-            label.text = ""
             for action in actions{
-                label.text! += "\(action.name)\nDescription: \(action.description)\n"
+                label.text! += "\n\n\(action.name)\n\nDescription: \(action.description)\n"
                 if action.attackBonus != nil {
-                    label.text! += "ATK Bonus: \(action.attackBonus!)\n"
+                    label.text! += "*ATK Bonus: \(action.attackBonus!)\n"
                 }
                 if action.damage != nil {
-                    label.text! += "Damage: \(action.damage!)\n"
+                    for d in action.damage!{
+                        label.text! += "*Damage: \(d.damageDice)\n"
+                        label.text! += "*Type: \(d.damageType["name"]!)"
+                        label.numberOfLines += 10
+                    }
+                    
                 }
             }
         }
