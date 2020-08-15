@@ -27,7 +27,7 @@ struct MonsterResponse: Codable, Category{
     let intelligence: Int
     let wisdom: Int
     let charisma: Int
-    let proficiencies: [Proeficiency]
+    let proficiencies: [Proficiency]?
     let damageVulnerabilities: [String]
     let damageResistences: [String]
     let damageImmunities: [String]
@@ -76,7 +76,7 @@ struct Speed: Codable{
     let fly: String?
 }
 
-struct Proeficiency: Codable{
+struct Proficiency: Codable{
     let name: String
     let url: String
     let value: Int
@@ -85,7 +85,6 @@ struct Proeficiency: Codable{
 struct SpecialAbilities: Codable{
     let name: String
     let desc: String
-    let dc: DC?
 }
 
 struct DC: Codable{

@@ -53,7 +53,7 @@ class MonstersBookViewController: UIViewController {
         hpLabel.text = "HP: \(monster!.hitPoints)"
         hitDiceLabel.text = "Hit Dice: \(monster!.hitDice)"
         //TODO: Speed
-        speedLabel.text = "Speed: \n Swim: \(monster?.speed.swim)\nWalk: \(monster?.speed.walk)"
+        speedLabel.text = "Speed: \n Swim: \(monster?.speed.swim)\nWalk: \(monster?.speed.walk)\nFly: \(monster?.speed.fly)"
         strLabel.text = "STR: \(monster!.strength)"
         dexLabel.text = "DEX: \(monster!.dexterity)"
         conLabel.text = "CON: \(monster!.constitution)"
@@ -61,7 +61,79 @@ class MonstersBookViewController: UIViewController {
         wisLabel.text = "WIS: \(monster!.wisdom)"
         chaLabel.text = "CHA: \(monster!.charisma)"
         
+        if let proficiency = monster?.proficiencies{
+            proficienciesLabel.text = ""
+            for p in proficiency{
+                proficienciesLabel.text! += "\(p.name) Value: \(p.value)\n"
+            }
+        }
+        
+        checkResistance(label: damageVulnerabilitiesLabel, resistance: monster!.damageVulnerabilities)
+        checkResistance(label: damageResistencesLabel, resistance: monster!.damageResistences)
+        checkResistance(label: damageImmunitiesLabel, resistance:  monster!.damageImmunities)
+        
+        conditionsImmunitiesLabel.text = ""
+        
+        if monster?.conditionImmunities.count == 0{
+            conditionsImmunitiesLabel.text = "none"
+        }else{
+            for cond in monster!.conditionImmunities{
+                 conditionsImmunitiesLabel.text! += "\(cond["name"]!)\n"
+            }
+        }
+        
+        languagesLabel.text = "Languages: \(monster!.languages)"
+        challengeRatingLabel.text = "Challenge Rating: \(monster!.challangeRating)"
+        
+        if monster?.specialAbilities?.count == 0{
+            specialAbilitiesLabel.text! += "none"
+
+        } else{
+            specialAbilitiesLabel.text = ""
+            for special in monster!.specialAbilities!{
+                specialAbilitiesLabel.text! += "\(special.name)\nDescription: \(special.desc)\n"
+            }
+        }
+        
+        checkActions(label: actionsLabel, actions: monster!.actions!)
+        checkActions(label: legendaryActionsLabel, actions: monster!.legendaryActions!)
+        
+        
+        
+        
     }
+    
+    func checkResistance(label: UILabel, resistance: [String]){
+        label.text = ""
+        if resistance.count == 0{
+            label.text = "none"
+        }
+        
+        for r in resistance{
+            label.text! += "\(r)\n"
+        }
+    }
+    
+    func checkActions(label: UILabel, actions: [Action]){
+        if actions.count == 0{
+            label.text = "none"
+        } else{
+            label.text = ""
+            for action in actions{
+                label.text! += "\(action.name)\nDescription: \(action.description)\n"
+                if action.attackBonus != nil {
+                    label.text! += "ATK Bonus: \(action.attackBonus!)\n"
+                }
+                if action.damage != nil {
+                    label.text! += "Damage: \(action.damage!)\n"
+                }
+            }
+        }
+    }
+
+        
+        
+    
     
 
 }
