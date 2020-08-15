@@ -73,14 +73,18 @@ class MonstersBookViewController: UIViewController {
         chaLabel.text = "CHA: \(monster!.charisma)"
         
         if let proficiency = monster?.proficiencies{
-            proficienciesLabel.text = "Proeficiencies:\n"
+            if proficiency.count == 0{
+                proficienciesLabel.text = ""
+            }else{
+               proficienciesLabel.text = "\n\nProeficiencies:\n"
+            }
             for p in proficiency{
                 proficienciesLabel.text! += "\n\(p.name) Value: \(p.value)\n"
                 proficienciesLabel.numberOfLines += 2
             }
         }
         
-        checkResistance(label: damageVulnerabilitiesLabel, name: "Damage Vulnerabilities:", resistance: monster!.damageVulnerabilities)
+        checkResistance(label: damageVulnerabilitiesLabel, name: "\nDamage Vulnerabilities:", resistance: monster!.damageVulnerabilities)
         checkResistance(label: damageResistencesLabel, name: "Damage Resistance:", resistance: monster!.damageResistences)
         checkResistance(label: damageImmunitiesLabel, name: "Damage Immunities:", resistance:  monster!.damageImmunities)
         
@@ -93,31 +97,33 @@ class MonstersBookViewController: UIViewController {
                  conditionsImmunitiesLabel.text! += "\(cond["name"]!)\n"
             }
         }
+        if monster?.languages.count == 0{
+            languagesLabel.text = ""
+        }else{
+            languagesLabel.text = "\nLanguages: \(monster!.languages)"
+
+        }
+        challengeRatingLabel.text = "\nChallenge Rating: \(Int(monster!.challangeRating))"
         
-        languagesLabel.text = "\nLanguages: \(monster!.languages)"
-        challengeRatingLabel.text = "Challenge Rating: \(Int(monster!.challangeRating))"
-        
-        specialAbilitiesLabel.text = "SPECIAL ABILITIES:"
+        specialAbilitiesLabel.text = "\nSPECIAL ABILITIES:"
         guard let specialAbilities = monster?.specialAbilities else{
-             specialAbilitiesLabel.text! += "\nnone"
+             specialAbilitiesLabel.text! = ""
             return}
         for special in specialAbilities{
             specialAbilitiesLabel.text! += "\n\n\(special.name)\n\nDescription: \(special.desc)\n"
             specialAbilitiesLabel.numberOfLines += 10
-     
         }
+        
+        actionsLabel.text = ""
         if let actions = monster?.actions{
             checkActions(label: actionsLabel, name: "ACTIONS: ", actions: actions)
-
-        } else {
-            actionsLabel.text = ""
         }
+        
+        legendaryActionsLabel.text = ""
         if let lActions = monster?.legendaryActions{
             checkActions(label: legendaryActionsLabel, name: "LEGENDARY ACTIONS: ", actions: lActions)
-
-        }else{
-            legendaryActionsLabel.text = ""
         }
+   
     }
     
     func checkResistance(label: UILabel, name: String, resistance: [String]){
