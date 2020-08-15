@@ -98,14 +98,13 @@ class MonstersBookViewController: UIViewController {
         challengeRatingLabel.text = "Challenge Rating: \(Int(monster!.challangeRating))"
         
         specialAbilitiesLabel.text = "SPECIAL ABILITIES:"
-        
-        if monster?.specialAbilities?.count == 0{
-            specialAbilitiesLabel.text! += "\nnone"
-        } else{
-            for special in monster!.specialAbilities!{
-                specialAbilitiesLabel.text! += "\n\n\(special.name)\n\nDescription: \(special.desc)\n"
-                specialAbilitiesLabel.numberOfLines += 10
-            }
+        guard let specialAbilities = monster?.specialAbilities else{
+             specialAbilitiesLabel.text! += "\nnone"
+            return}
+        for special in specialAbilities{
+            specialAbilitiesLabel.text! += "\n\n\(special.name)\n\nDescription: \(special.desc)\n"
+            specialAbilitiesLabel.numberOfLines += 10
+     
         }
         if let actions = monster?.actions{
             checkActions(label: actionsLabel, name: "ACTIONS: ", actions: actions)
