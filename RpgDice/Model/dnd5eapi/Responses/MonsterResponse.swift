@@ -31,12 +31,12 @@ struct MonsterResponse: Codable, Category{
     let damageVulnerabilities: [String]
     let damageResistences: [String]
     let damageImmunities: [String]
-    let conditionImmunities: [String]
+    let conditionImmunities: [[String : String]]
     let languages: String
-    let challangeRating: Int
-    let specialAbilities: [SpecialAbilities]
-    let actions : [Action]
-    let legendaryActions: [Action]
+    let challangeRating: Float
+    let specialAbilities: [SpecialAbilities]?
+    let actions : [Action]?
+    let legendaryActions: [Action]?
     
     enum CodingKeys: String, CodingKey{
         
@@ -114,15 +114,4 @@ struct Action: Codable{
         case damage
     }
 }
-
-struct MonsterDamage: Codable{
-    let damageDice: String
-    let damageType: [[String : String]]
-    
-    enum CodingKeys: String, CodingKey{
-        case damageDice = "damage_dice"
-        case damageType = "damage_type"
-    }
-}
-
 
