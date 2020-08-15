@@ -86,19 +86,21 @@ public class DndAPI{
             let decoder = JSONDecoder()
             do
             {
+                let result: Category?
                 switch category{
                 case "Abilities":
-                    let result = try decoder.decode(AbilityScores.self, from: data)
-                    completionHandler(result, nil)
+                    result = try decoder.decode(AbilityScores.self, from: data)
                 case "Classes":
-                    let result = try decoder.decode(ClassResponse.self, from: data)
-                    completionHandler(result, nil)
+                    result = try decoder.decode(ClassResponse.self, from: data)
                 case "Equipment":
-                    let result = try decoder.decode(EquipmentResponse.self, from: data)
-                    completionHandler(result, nil)
+                    result = try decoder.decode(EquipmentResponse.self, from: data)
+                case "Monsters":
+                    result = try decoder.decode(MonsterResponse.self, from: data)
                 default:
                     return
                 }
+                completionHandler(result, nil)
+
                 
                 
             }

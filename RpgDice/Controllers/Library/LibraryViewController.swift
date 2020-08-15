@@ -95,8 +95,10 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
                     self.performSegue(withIdentifier: "openClass", sender: self)
                 case "Equipment":
                     self.performSegue(withIdentifier: "openEquips", sender: self)
+                case "Monsters":
+                    self.performSegue(withIdentifier: "openMonsters", sender: self)
                 default:
-                    self.performSegue(withIdentifier: "openBook", sender: self)
+                    return
                 }
             }
         }

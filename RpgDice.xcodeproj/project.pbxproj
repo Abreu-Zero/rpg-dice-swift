@@ -10,6 +10,8 @@
 		992A0C2124E1C81E00289108 /* DndAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A0C2024E1C81E00289108 /* DndAPI.swift */; };
 		992A0C2324E1CA2C00289108 /* BaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A0C2224E1CA2C00289108 /* BaseResult.swift */; };
 		992A0C2524E1CBE400289108 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A0C2424E1CBE400289108 /* LibraryViewController.swift */; };
+		99315C9224E7F9C50021AEC0 /* MonstersBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99315C9124E7F9C50021AEC0 /* MonstersBookViewController.swift */; };
+		99315C9424E7FBFF0021AEC0 /* MonsterResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99315C9324E7FBFF0021AEC0 /* MonsterResponse.swift */; };
 		993C15E824E40983007B8376 /* AbilitiesBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C15E724E40983007B8376 /* AbilitiesBookViewController.swift */; };
 		993C15EA24E42F14007B8376 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C15E924E42F14007B8376 /* Category.swift */; };
 		993C15EC24E42F2A007B8376 /* ClassResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993C15EB24E42F2A007B8376 /* ClassResponse.swift */; };
@@ -54,6 +56,8 @@
 		992A0C2024E1C81E00289108 /* DndAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DndAPI.swift; sourceTree = "<group>"; };
 		992A0C2224E1CA2C00289108 /* BaseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResult.swift; sourceTree = "<group>"; };
 		992A0C2424E1CBE400289108 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
+		99315C9124E7F9C50021AEC0 /* MonstersBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonstersBookViewController.swift; sourceTree = "<group>"; };
+		99315C9324E7FBFF0021AEC0 /* MonsterResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterResponse.swift; sourceTree = "<group>"; };
 		993C15E724E40983007B8376 /* AbilitiesBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilitiesBookViewController.swift; sourceTree = "<group>"; };
 		993C15E924E42F14007B8376 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		993C15EB24E42F2A007B8376 /* ClassResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassResponse.swift; sourceTree = "<group>"; };
@@ -156,6 +160,7 @@
 				993C15E724E40983007B8376 /* AbilitiesBookViewController.swift */,
 				997EEFD424E47A8000E95190 /* EquipBookViewController.swift */,
 				99A11FA024E432370076E6D3 /* ClassesBookViewController.swift */,
+				99315C9124E7F9C50021AEC0 /* MonstersBookViewController.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -173,11 +178,12 @@
 		99AB9E5D24E4023200D59A8F /* Responses */ = {
 			isa = PBXGroup;
 			children = (
+				993C15E924E42F14007B8376 /* Category.swift */,
 				992A0C2224E1CA2C00289108 /* BaseResult.swift */,
 				99AB9E5E24E4024D00D59A8F /* AbilityScores.swift */,
 				993C15EB24E42F2A007B8376 /* ClassResponse.swift */,
 				997EEFD224E4799500E95190 /* EquipmentResponse.swift */,
-				993C15E924E42F14007B8376 /* Category.swift */,
+				99315C9324E7FBFF0021AEC0 /* MonsterResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -366,6 +372,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				992A0C2124E1C81E00289108 /* DndAPI.swift in Sources */,
+				99315C9424E7FBFF0021AEC0 /* MonsterResponse.swift in Sources */,
 				992A0C2524E1CBE400289108 /* LibraryViewController.swift in Sources */,
 				993C15EC24E42F2A007B8376 /* ClassResponse.swift in Sources */,
 				992A0C2324E1CA2C00289108 /* BaseResult.swift in Sources */,
@@ -373,6 +380,7 @@
 				99E92D6224819E9200188E04 /* DicesViewController.swift in Sources */,
 				9970AA5124E054FA0087C25F /* DataController.swift in Sources */,
 				997EEFD324E4799500E95190 /* EquipmentResponse.swift in Sources */,
+				99315C9224E7F9C50021AEC0 /* MonstersBookViewController.swift in Sources */,
 				99E92D5E24819E9200188E04 /* AppDelegate.swift in Sources */,
 				99AB9E5C24E3F3EB00D59A8F /* LinkedList.swift in Sources */,
 				99E92D6024819E9200188E04 /* SceneDelegate.swift in Sources */,
