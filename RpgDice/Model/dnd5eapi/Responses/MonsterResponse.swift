@@ -73,6 +73,7 @@ struct MonsterResponse: Codable, Category{
 struct Speed: Codable{
     let walk: String?
     let swim: String?
+    let fly: String?
 }
 
 struct Proeficiency: Codable{

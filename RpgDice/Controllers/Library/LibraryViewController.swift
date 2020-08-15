@@ -121,6 +121,11 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
             let destination = segue.destination as! EquipBookViewController
             destination.category = self.toSend as? EquipmentResponse
         }
+        
+        if segue.identifier == "openMonsters"{
+            let destination = segue.destination as! MonstersBookViewController
+            destination.monster = self.toSend as? MonsterResponse
+        }
     }
     
     func handleDndRequest(row: Int){
