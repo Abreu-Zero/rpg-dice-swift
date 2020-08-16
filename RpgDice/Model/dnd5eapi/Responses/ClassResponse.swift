@@ -14,7 +14,7 @@ struct ClassResponse: Codable, Category{
     let index: String
     let name: String
     let hitDie: Int
-    let proeficiencyChoices: [classProeficiency]
+    let proeficiencyChoices: [Choices]
     let proficiencies: [[String : String]]
     let saving : [[String : String]]
     let starting: [String : String]
@@ -38,7 +38,7 @@ struct ClassResponse: Codable, Category{
     }
 }
 
-struct classProeficiency: Codable{
+struct Choices: Codable{
     
     let choose: Int
     let type: String

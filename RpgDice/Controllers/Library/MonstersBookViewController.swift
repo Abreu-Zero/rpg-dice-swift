@@ -121,7 +121,7 @@ class MonstersBookViewController: UIViewController {
         
         legendaryActionsLabel.text = ""
         if let lActions = monster?.legendaryActions{
-            checkActions(label: legendaryActionsLabel, name: "LEGENDARY ACTIONS: ", actions: lActions)
+            checkActions(label: legendaryActionsLabel, name: "\n\nLEGENDARY ACTIONS: ", actions: lActions)
         }
    
     }

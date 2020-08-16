@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9926561C24E956AA006FD3C9 /* RacesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926561B24E956AA006FD3C9 /* RacesResponse.swift */; };
 		992A0C2124E1C81E00289108 /* DndAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A0C2024E1C81E00289108 /* DndAPI.swift */; };
 		992A0C2324E1CA2C00289108 /* BaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A0C2224E1CA2C00289108 /* BaseResult.swift */; };
 		992A0C2524E1CBE400289108 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A0C2424E1CBE400289108 /* LibraryViewController.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9926561B24E956AA006FD3C9 /* RacesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesResponse.swift; sourceTree = "<group>"; };
 		992A0C2024E1C81E00289108 /* DndAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DndAPI.swift; sourceTree = "<group>"; };
 		992A0C2224E1CA2C00289108 /* BaseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResult.swift; sourceTree = "<group>"; };
 		992A0C2424E1CBE400289108 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 				993C15EB24E42F2A007B8376 /* ClassResponse.swift */,
 				997EEFD224E4799500E95190 /* EquipmentResponse.swift */,
 				99315C9324E7FBFF0021AEC0 /* MonsterResponse.swift */,
+				9926561B24E956AA006FD3C9 /* RacesResponse.swift */,
 			);
 			path = Responses;
 			sourceTree = "<group>";
@@ -382,6 +385,7 @@
 				997EEFD324E4799500E95190 /* EquipmentResponse.swift in Sources */,
 				99315C9224E7F9C50021AEC0 /* MonstersBookViewController.swift in Sources */,
 				99E92D5E24819E9200188E04 /* AppDelegate.swift in Sources */,
+				9926561C24E956AA006FD3C9 /* RacesResponse.swift in Sources */,
 				99AB9E5C24E3F3EB00D59A8F /* LinkedList.swift in Sources */,
 				99E92D6024819E9200188E04 /* SceneDelegate.swift in Sources */,
 				99C7978D24E0309A005C903E /* ResultsViewController.swift in Sources */,
