@@ -79,7 +79,7 @@ struct Speed: Codable{
 struct Proficiency: Codable{
     let name: String
     let url: String
-    let value: Int
+    let value: Int?
 }
 
 struct SpecialAbilities: Codable{

@@ -79,7 +79,7 @@ class MonstersBookViewController: UIViewController {
                proficienciesLabel.text = "\n\nProeficiencies:\n"
             }
             for p in proficiency{
-                proficienciesLabel.text! += "\n\(p.name) Value: \(p.value)\n"
+                proficienciesLabel.text! += "\n\(p.name) Value: \(p.value!)\n"
                 proficienciesLabel.numberOfLines += 2
             }
         }
