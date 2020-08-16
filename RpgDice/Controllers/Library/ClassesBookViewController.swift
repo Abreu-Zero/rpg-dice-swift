@@ -21,25 +21,27 @@ class ClassesBookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        classNameLabel.text = dndClass?.name
-        hitdieLabel.text = "hit die: \(dndClass!.hitDie)"
-        pickProfLabel.text = "Proeficiency Choices: (\(dndClass!.proeficiencyChoices[0].choose))"
+        
+        guard let dndClass = dndClass else{return}
+        classNameLabel.text = dndClass.name
+        hitdieLabel.text = "hit die: \(dndClass.hitDie)"
+        pickProfLabel.text = "Proeficiency Choices: (\(dndClass.proeficiencyChoices[0].choose))"
         
         profChoicesLabel.text = ""
-        for p in dndClass!.proeficiencyChoices{
+        for p in dndClass.proeficiencyChoices{
             for p in p.from{
                 profChoicesLabel.text! += "\(p["name"]!)\n"
             }
         }
         
         profLabel.text = ""
-        for p in dndClass!.proficiencies{
+        for p in dndClass.proficiencies{
             profLabel.text! += "\(p["name"]!)\n"
 
         }
         
         savingLabel.text = ""
-        for p in dndClass!.saving{
+        for p in dndClass.saving{
             savingLabel.text! += "\(p["name"]!)\n"
 
         }

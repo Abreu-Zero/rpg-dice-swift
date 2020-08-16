@@ -57,6 +57,10 @@ class HistoryViewController: UITableViewController {
        }
 
     @IBAction func deleteHistory(_ sender: Any) {
+        showDeleteAlert()
+    }
+    
+    func nowReallyDeleteHistory(){
         for roll in previousResults!{
             dataController?.viewContext.delete(roll)
         }
@@ -68,5 +72,19 @@ class HistoryViewController: UITableViewController {
         }
         previousResults = []
         tableView.reloadData()
+    }
+    
+    func showDeleteAlert(){
+        let alert = UIAlertController(title: "Delete History", message: "This can't be undone", preferredStyle: .alert)
+
+        // Create actions
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { [weak self] action in
+            self!.nowReallyDeleteHistory()
+        }
+            
+        alert.addAction(cancelAction)
+            alert.addAction(deleteAction)
+        present(alert, animated: true, completion: nil)
     }
 }

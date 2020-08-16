@@ -45,34 +45,36 @@ class MonstersBookViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.text = "\nName: \(monster!.name)"
-        sizeLabel.text = "\nSize: \(monster!.size)"
-        typeLabel.text = "\nType: \(monster!.monsterType)"
-        alignmentLabel.text = "\nAlignment: \(monster!.alignment)"
-        armorClassLabel.text = "\nArmor Class: \(monster!.armorClass)"
-        hpLabel.text = "\nHP: \(monster!.hitPoints)"
-        hitDiceLabel.text = "\nHit Dice: \(monster!.hitDice)"
+        guard let monster = monster else{return}
+        
+        nameLabel.text = "\nName: \(monster.name)"
+        sizeLabel.text = "\nSize: \(monster.size)"
+        typeLabel.text = "\nType: \(monster.monsterType)"
+        alignmentLabel.text = "\nAlignment: \(monster.alignment)"
+        armorClassLabel.text = "\nArmor Class: \(monster.armorClass)"
+        hpLabel.text = "\nHP: \(monster.hitPoints)"
+        hitDiceLabel.text = "\nHit Dice: \(monster.hitDice)"
         
         speedLabel.text = "\nSpeed: "
-        if let walk = monster?.speed.walk{
+        if let walk = monster.speed.walk{
             speedLabel.text! += "\nWalk: \(walk)"
         }
-        if let swim = monster?.speed.swim{
+        if let swim = monster.speed.swim{
             speedLabel.text! += "\nSwim: \(swim)"
         }
-        if let fly = monster?.speed.fly{
+        if let fly = monster.speed.fly{
             speedLabel.text! += "\nFly: \(fly)"
         }
         speedLabel.text! += "\n"
         
-        strLabel.text = "STR: \(monster!.strength)"
-        dexLabel.text = "DEX: \(monster!.dexterity)"
-        conLabel.text = "CON: \(monster!.constitution)"
-        intLabel.text = "INT: \(monster!.intelligence)"
-        wisLabel.text = "WIS: \(monster!.wisdom)"
-        chaLabel.text = "CHA: \(monster!.charisma)"
+        strLabel.text = "STR: \(monster.strength)"
+        dexLabel.text = "DEX: \(monster.dexterity)"
+        conLabel.text = "CON: \(monster.constitution)"
+        intLabel.text = "INT: \(monster.intelligence)"
+        wisLabel.text = "WIS: \(monster.wisdom)"
+        chaLabel.text = "CHA: \(monster.charisma)"
         
-        if let proficiency = monster?.proficiencies{
+        if let proficiency = monster.proficiencies{
             if proficiency.count == 0{
                 proficienciesLabel.text = ""
             }else{
@@ -84,29 +86,29 @@ class MonstersBookViewController: UIViewController {
             }
         }
         
-        checkResistance(label: damageVulnerabilitiesLabel, name: "\nDamage Vulnerabilities:", resistance: monster!.damageVulnerabilities)
-        checkResistance(label: damageResistencesLabel, name: "Damage Resistance:", resistance: monster!.damageResistences)
-        checkResistance(label: damageImmunitiesLabel, name: "Damage Immunities:", resistance:  monster!.damageImmunities)
+        checkResistance(label: damageVulnerabilitiesLabel, name: "\nDamage Vulnerabilities:", resistance: monster.damageVulnerabilities)
+        checkResistance(label: damageResistencesLabel, name: "Damage Resistance:", resistance: monster.damageResistences)
+        checkResistance(label: damageImmunitiesLabel, name: "Damage Immunities:", resistance:  monster.damageImmunities)
         
         conditionsImmunitiesLabel.text = "Condition Immunities:"
         
-        if monster?.conditionImmunities.count == 0{
+        if monster.conditionImmunities.count == 0{
             conditionsImmunitiesLabel.text! += "\nnone"
         }else{
-            for cond in monster!.conditionImmunities{
+            for cond in monster.conditionImmunities{
                  conditionsImmunitiesLabel.text! += "\n\(cond["name"]!)\n"
             }
         }
-        if monster?.languages.count == 0{
+        if monster.languages.count == 0{
             languagesLabel.text = ""
         }else{
-            languagesLabel.text = "\nLanguages: \(monster!.languages)"
+            languagesLabel.text = "\nLanguages: \(monster.languages)"
 
         }
-        challengeRatingLabel.text = "\nChallenge Rating: \(Int(monster!.challangeRating))"
+        challengeRatingLabel.text = "\nChallenge Rating: \(Int(monster.challangeRating))"
         
         specialAbilitiesLabel.text = "\nSPECIAL ABILITIES:"
-        guard let specialAbilities = monster?.specialAbilities else{
+        guard let specialAbilities = monster.specialAbilities else{
              specialAbilitiesLabel.text! = ""
             return}
         for special in specialAbilities{
@@ -115,12 +117,12 @@ class MonstersBookViewController: UIViewController {
         }
         
         actionsLabel.text = ""
-        if let actions = monster?.actions{
+        if let actions = monster.actions{
             checkActions(label: actionsLabel, name: "ACTIONS: ", actions: actions)
         }
         
         legendaryActionsLabel.text = ""
-        if let lActions = monster?.legendaryActions{
+        if let lActions = monster.legendaryActions{
             checkActions(label: legendaryActionsLabel, name: "\n\nLEGENDARY ACTIONS: ", actions: lActions)
         }
    

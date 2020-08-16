@@ -46,6 +46,7 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
         linkedList.append(node: nodeSpells)
         
         handleDndRequest(row: 0)
+        category = linkedList.index(index: 0)!.title
     }
     
     //MARK: pickerVIew funcs
@@ -81,9 +82,12 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
        }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        activityIndicator.startAnimating()
         DndAPI.categoryRequest(url: results[indexPath.row].url!, category: self.category) { (result, error) in
             guard let result = result else{
                 print(error!)
+                self.showAlertError(errorCode: error?.localizedDescription ?? "Some random error")
                 return
             }
             self.toSend = result
@@ -111,6 +115,7 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
     //MARK: Segues
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        activityIndicator.stopAnimating()
         if segue.identifier == "openBook"{
             let destination = segue.destination as! AbilitiesBookViewController
             destination.ability = self.toSend! as? AbilityScores
@@ -147,6 +152,11 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.results = []
         DndAPI.requestBase(endpoint: linkedList.index(index: row)!.value) { (result, error) in
             guard let result = result else{
+                DispatchQueue.main.async {
+                    self.activityIndicator.stopAnimating()
+                    self.showAlertError(errorCode: error?.localizedDescription ?? "Could not retrieve the selected data.")
+                    
+                }
                 return
             }
             for r in result.results{
@@ -159,5 +169,21 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.activityIndicator.stopAnimating()
             }
         }
+    }
+    
+    func showAlertError(errorCode: String){
+        let errorTitle = "ERROR"
+        let errorBody = errorCode + " touch ok to go back to the last screen"
+        let actionTitle = "Ok"
+        
+        let alert = UIAlertController(title: errorTitle, message: errorBody, preferredStyle: UIAlertController.Style.alert)
+        
+        let action = UIAlertAction(title: actionTitle, style: .default) { [weak self] action in
+            self?.navigationController?.popViewController(animated: true)
+        }
+        
+        alert.addAction(action)
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }

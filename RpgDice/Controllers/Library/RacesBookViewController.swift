@@ -26,45 +26,47 @@ class RacesBookViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        nameLabel.text = race?.name
+        guard let race = race else{return}
+        
+        nameLabel.text = race.name
         //speedLabel.text = race?.speed
-        alignmentLabel.text = "Aligment: \(race!.alignment)"
+        alignmentLabel.text = "Aligment: \(race.alignment)"
         
         abiBonusLabel.text = "Abilitiy Bonuses: "
-        for a in race!.abilityBonuses{
+        for a in race.abilityBonuses{
             abiBonusLabel.text! += "\n\(a.name): \(a.bonus)"
             abiBonusLabel.numberOfLines += 1
         }
-        ageLabel.text = "Age: \(race!.age)"
-        sizeLabel.text = "\nSize: \(race!.size)"
-        sizeLabel.text! += "\n\n\(race!.sizeDescription)"
+        ageLabel.text = "Age: \(race.age)"
+        sizeLabel.text = "\nSize: \(race.size)"
+        sizeLabel.text! += "\n\n\(race.sizeDescription)"
         
 
-        if race?.startingProficiencies.count == 0{
+        if race.startingProficiencies.count == 0{
             startProfLabel.text = ""
         }
         else{
             startProfLabel.text = "Starting Proficiencies: "
-            for p in race!.startingProficiencies{
+            for p in race.startingProficiencies{
                 startProfLabel.text! += "\n\(p.name)"
             }
         }
         
         languagesLabel.text = "Languages: "
-        for l in race!.languages{
+        for l in race.languages{
              languagesLabel.text! += "\n\(l["name"]!)"
             languagesLabel.numberOfLines += 2
         }
-        languagesLabel.text! += "\n\n\(race!.languagesDescription)"
+        languagesLabel.text! += "\n\n\(race.languagesDescription)"
         
         traitLabel.text = "Traits:"
         
-        for trait in race!.traits{
+        for trait in race.traits{
             traitLabel.numberOfLines += 1
             traitLabel.text! += "\n\(trait["name"]!)"
         }
         
-        guard let choices = race?.traitOptions else {
+        guard let choices = race.traitOptions else {
             traitOptionLabel.text = ""
             return}
         traitOptionLabel.text = "Trait Options: (\(choices.choose))"

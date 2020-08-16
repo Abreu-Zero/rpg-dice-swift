@@ -46,7 +46,6 @@ public class DndAPI{
     class func requestBase(endpoint: Endpoint, completionHandler: @escaping (BaseResult?, Error?) -> Void){
         
         let endURL = (endpoint.url)
-        print(endURL)
         let task = URLSession.shared.dataTask(with: endURL) { (data, response, error) in
             
             guard let data = data else {
@@ -54,7 +53,6 @@ public class DndAPI{
                 completionHandler(nil, error)
                 return
             }
-            print(data)
             let decoder = JSONDecoder()
             do
             {
@@ -102,9 +100,6 @@ public class DndAPI{
                     return
                 }
                 completionHandler(result, nil)
-
-                
-                
             }
             catch
             {

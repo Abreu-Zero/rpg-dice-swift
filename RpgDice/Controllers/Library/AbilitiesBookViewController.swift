@@ -17,10 +17,14 @@ class AbilitiesBookViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        titleLabel.text = ability?.fullName
-        descLabel.text = "\(ability!.description[0])\n\n\((ability!.description[1]))"
+        
+        guard let ability = ability else{
+            return
+        }
+        titleLabel.text = ability.fullName
+        descLabel.text = "\(ability.description[0])\n\n\((ability.description[1]))"
         skillsLabel.text = ""
-        for skill in ability!.skills{
+        for skill in ability.skills{
             skillsLabel.text! += "\(skill["name"] ?? "No Skill")\n"
 
         }
