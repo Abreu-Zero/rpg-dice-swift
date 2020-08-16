@@ -29,7 +29,7 @@ class RacesBookViewController: UIViewController {
         guard let race = race else{return}
         
         nameLabel.text = race.name
-        //speedLabel.text = race?.speed
+        speedLabel.text = "Speed: \(race.speed)"
         alignmentLabel.text = "Aligment: \(race.alignment)"
         
         abiBonusLabel.text = "Abilitiy Bonuses: "
