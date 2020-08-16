@@ -58,7 +58,10 @@ class SpellsBookViewController: UIViewController {
                 }
             }
         }else if let damage = spell.damage{
-            healDamageLabel.text = "Damage: \(damage.damageType["name"]!)"
+            healDamageLabel.text = "Damage: "
+            if let damageName = damage.damageType["name"]{
+                healDamageLabel.text! += damageName
+            }
             var type: [String: String] = [:]
             if let damageSlot = damage.damageSlot{
                 type = damageSlot
