@@ -21,6 +21,7 @@
 		9970AA5124E054FA0087C25F /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9970AA5024E054FA0087C25F /* DataController.swift */; };
 		9970AA5324E055A90087C25F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9970AA5224E055A90087C25F /* FirstViewController.swift */; };
 		99760F8324E96412002D1390 /* RacesBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99760F8224E96412002D1390 /* RacesBookViewController.swift */; };
+		99760F8524E976EB002D1390 /* SpellsBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99760F8424E976EB002D1390 /* SpellsBookViewController.swift */; };
 		997EEFD324E4799500E95190 /* EquipmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997EEFD224E4799500E95190 /* EquipmentResponse.swift */; };
 		997EEFD524E47A8000E95190 /* EquipBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997EEFD424E47A8000E95190 /* EquipBookViewController.swift */; };
 		99A11FA124E432370076E6D3 /* ClassesBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A11FA024E432370076E6D3 /* ClassesBookViewController.swift */; };
@@ -71,6 +72,7 @@
 		9970AA5224E055A90087C25F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		9970FB5324E02A4400E8FB63 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		99760F8224E96412002D1390 /* RacesBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesBookViewController.swift; sourceTree = "<group>"; };
+		99760F8424E976EB002D1390 /* SpellsBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellsBookViewController.swift; sourceTree = "<group>"; };
 		997EEFD224E4799500E95190 /* EquipmentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentResponse.swift; sourceTree = "<group>"; };
 		997EEFD424E47A8000E95190 /* EquipBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipBookViewController.swift; sourceTree = "<group>"; };
 		99A11FA024E432370076E6D3 /* ClassesBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesBookViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 				997EEFD424E47A8000E95190 /* EquipBookViewController.swift */,
 				99315C9124E7F9C50021AEC0 /* MonstersBookViewController.swift */,
 				99760F8224E96412002D1390 /* RacesBookViewController.swift */,
+				99760F8424E976EB002D1390 /* SpellsBookViewController.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				997EEFD324E4799500E95190 /* EquipmentResponse.swift in Sources */,
 				99315C9224E7F9C50021AEC0 /* MonstersBookViewController.swift in Sources */,
 				99E92D5E24819E9200188E04 /* AppDelegate.swift in Sources */,
+				99760F8524E976EB002D1390 /* SpellsBookViewController.swift in Sources */,
 				9926561C24E956AA006FD3C9 /* RacesResponse.swift in Sources */,
 				99AB9E5C24E3F3EB00D59A8F /* LinkedList.swift in Sources */,
 				99E92D6024819E9200188E04 /* SceneDelegate.swift in Sources */,

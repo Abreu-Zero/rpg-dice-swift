@@ -125,11 +125,15 @@ struct ContentAdnv: Codable{
 }
 
 struct Damage: Codable{
-    let damageDice: String
+    let damageDice: String?
+    let damageSlot: [String : String]?
+    let damageCharacter: [String : String]?
     let damageType: [String : String]
     
     enum CodingKeys: String, CodingKey{
         case damageDice = "damage_dice"
+        case damageSlot = "damage_at_slot_level"
+        case damageCharacter = "damage_at_character_level"
         case damageType = "damage_type"
     }
 }
