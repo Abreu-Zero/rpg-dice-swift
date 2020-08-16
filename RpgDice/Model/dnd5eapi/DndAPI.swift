@@ -71,9 +71,7 @@ public class DndAPI{
     }
     
     class func categoryRequest(url: String, category: String, completionHandler: @escaping (Category?, Error?) -> Void){
-        
-        //TODO: create a switch to handle the 6 categories
-        
+                
         guard let url = URL(string: baseURL + url) else{return}
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -96,6 +94,10 @@ public class DndAPI{
                     result = try decoder.decode(EquipmentResponse.self, from: data)
                 case "Monsters":
                     result = try decoder.decode(MonsterResponse.self, from: data)
+                case "Races":
+                    result = try decoder.decode(RacesResponse.self, from: data)
+                case "Spells":
+                    result = try decoder.decode(SpellsResponse.self, from: data)
                 default:
                     return
                 }

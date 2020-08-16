@@ -94,7 +94,7 @@ class MonstersBookViewController: UIViewController {
             conditionsImmunitiesLabel.text! += "\nnone"
         }else{
             for cond in monster!.conditionImmunities{
-                 conditionsImmunitiesLabel.text! += "\(cond["name"]!)\n"
+                 conditionsImmunitiesLabel.text! += "\n\(cond["name"]!)\n"
             }
         }
         if monster?.languages.count == 0{

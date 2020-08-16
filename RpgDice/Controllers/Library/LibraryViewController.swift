@@ -97,6 +97,8 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
                     self.performSegue(withIdentifier: "openEquips", sender: self)
                 case "Monsters":
                     self.performSegue(withIdentifier: "openMonsters", sender: self)
+                case "Races":
+                    self.performSegue(withIdentifier: "openRaces", sender: self)
                 default:
                     return
                 }
@@ -125,6 +127,11 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
         if segue.identifier == "openMonsters"{
             let destination = segue.destination as! MonstersBookViewController
             destination.monster = self.toSend as? MonsterResponse
+        }
+        
+        if segue.identifier == "openRaces"{
+            let destination = segue.destination as! RacesBookViewController
+            destination.race = self.toSend as? RacesResponse
         }
     }
     

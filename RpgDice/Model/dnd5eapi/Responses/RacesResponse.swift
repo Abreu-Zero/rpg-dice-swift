@@ -22,7 +22,8 @@ struct RacesResponse: Codable, Category{
     let languages: [[String : String]]
     let languagesDescription: String
     let traits: [[String : String]]
-    let traitOptions: Choices
+    let traitOptions: Choices?
+    let subraces: [[String : String]]?
     
     enum CodingKeys: String, CodingKey{
         case id = "_id"
@@ -36,9 +37,10 @@ struct RacesResponse: Codable, Category{
         case sizeDescription = "size_description"
         case startingProficiencies = "starting_ proficiencies"
         case languages
-        case languagesDescription = "languages_description"
+        case languagesDescription = "language_desc"
         case traits
         case traitOptions = "trait_options"
+        case subraces
     }
     
 }
