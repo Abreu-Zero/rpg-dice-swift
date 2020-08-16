@@ -22,9 +22,17 @@ Requirements and Specifications:
 
 * App should roll die from D4 to D20
 * App should save the date and time of the roll, as the last rolls in a list
-* App could display a simplified manual for equipment
-* App could display spells
-* App could display classes and races
+* App should display a simplified manual for equipment
+* App should display spells
+* App should display classes and races
+* App will be build with XCode 11.6 targeting iOS 13+
+
+
+How:
+------
+* First of all, be assured that you have the right XCode version installed
+* After that you can clone the project
+* build and run on your device and let me know if you like it!
 
 Thanks:
 -----------------
