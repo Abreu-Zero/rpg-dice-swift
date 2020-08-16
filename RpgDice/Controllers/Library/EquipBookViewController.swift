@@ -91,7 +91,7 @@ class EquipBookViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                     self.catLabel.text = "Category: \(categoryW)"
                     guard let range = item.weaponRange else{return}
                     self.rangeLabel.text = "Range: \(range)"
-                    guard let type = item.damage?.damageType["name"] else {return}
+                    guard let type = item.damage?.damageType!["name"] else {return}
                     self.typeLabel.text = "Type: \(type)"
                     guard let damage = item.damage?.damageDice else {return}
                     self.damageLabel.text = "Damage: \(damage)"

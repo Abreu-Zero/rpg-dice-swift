@@ -128,7 +128,7 @@ struct Damage: Codable{
     let damageDice: String?
     let damageSlot: [String : String]?
     let damageCharacter: [String : String]?
-    let damageType: [String : String]
+    let damageType: [String : String]?
     
     enum CodingKeys: String, CodingKey{
         case damageDice = "damage_dice"

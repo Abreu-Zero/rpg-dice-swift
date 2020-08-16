@@ -151,8 +151,8 @@ class MonstersBookViewController: UIViewController {
                 }
                 if action.damage != nil {
                     for d in action.damage!{
-                        label.text! += "-Damage: \(d.damageDice)\n"
-                        label.text! += "-Type: \(d.damageType["name"]!)"
+                        label.text! += "-Damage: \(d.damageDice!)\n"
+                        label.text! += "-Type: \(d.damageType!["name"]!)"
                         label.numberOfLines += 10
                     }
                     
