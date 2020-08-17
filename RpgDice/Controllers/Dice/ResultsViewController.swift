@@ -58,6 +58,7 @@ class ResultsViewController: UIViewController {
         
         guard let result = try? dataController?.viewContext.fetch(fetchRequest) else{return}
         
+        //If we have result, we shoud display them
         prevResults = result
         var dates: [String] = []
         if prevResults!.count > 0{

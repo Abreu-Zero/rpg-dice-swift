@@ -155,7 +155,6 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 DispatchQueue.main.async {
                     self.activityIndicator.stopAnimating()
                     self.showAlertError(errorCode: error?.localizedDescription ?? "Could not retrieve the selected data.")
-                    
                 }
                 return
             }

@@ -5,6 +5,7 @@
 //  Created by Henrique Abreu on 09/08/2020.
 //  Copyright © 2020 Henrique Abreu. All rights reserved.
 //
+// This ViewController displays the saved rolls
 
 import UIKit
 import CoreData
@@ -56,11 +57,14 @@ class HistoryViewController: UITableViewController {
            return cell
        }
 
+    //MARK: Deletion
+    
     @IBAction func deleteHistory(_ sender: Any) {
         showDeleteAlert()
     }
     
     func nowReallyDeleteHistory(){
+        //User confirmed the request, lets delete this bad boy
         for roll in previousResults!{
             dataController?.viewContext.delete(roll)
         }
