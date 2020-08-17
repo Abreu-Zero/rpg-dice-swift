@@ -11,7 +11,7 @@ import UIKit
 class MonstersBookViewController: UIViewController {
 
     
-    //MAR: my favourite labels
+    //MARK: my favourite labels
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var sizeLabel: UILabel!

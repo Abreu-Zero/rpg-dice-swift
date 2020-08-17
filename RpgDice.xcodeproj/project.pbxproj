@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		9926561C24E956AA006FD3C9 /* RacesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926561B24E956AA006FD3C9 /* RacesResponse.swift */; };
 		9926561E24E959BF006FD3C9 /* SpellsReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926561D24E959BF006FD3C9 /* SpellsReponse.swift */; };
+		9927282324EAB47C00535E30 /* DiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9927282224EAB47C00535E30 /* DiceTests.swift */; };
+		9927282524EAB6A000535E30 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9927282424EAB6A000535E30 /* HistoryTests.swift */; };
 		992A0C2124E1C81E00289108 /* DndAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A0C2024E1C81E00289108 /* DndAPI.swift */; };
 		992A0C2324E1CA2C00289108 /* BaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A0C2224E1CA2C00289108 /* BaseResult.swift */; };
 		992A0C2524E1CBE400289108 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A0C2424E1CBE400289108 /* LibraryViewController.swift */; };
@@ -59,6 +61,8 @@
 /* Begin PBXFileReference section */
 		9926561B24E956AA006FD3C9 /* RacesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RacesResponse.swift; sourceTree = "<group>"; };
 		9926561D24E959BF006FD3C9 /* SpellsReponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellsReponse.swift; sourceTree = "<group>"; };
+		9927282224EAB47C00535E30 /* DiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceTests.swift; sourceTree = "<group>"; };
+		9927282424EAB6A000535E30 /* HistoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTests.swift; sourceTree = "<group>"; };
 		992A0C2024E1C81E00289108 /* DndAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DndAPI.swift; sourceTree = "<group>"; };
 		992A0C2224E1CA2C00289108 /* BaseResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseResult.swift; sourceTree = "<group>"; };
 		992A0C2424E1CBE400289108 /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
@@ -238,6 +242,8 @@
 			isa = PBXGroup;
 			children = (
 				99E92D7424819E9800188E04 /* RpgDiceTests.swift */,
+				9927282224EAB47C00535E30 /* DiceTests.swift */,
+				9927282424EAB6A000535E30 /* HistoryTests.swift */,
 				99E92D7624819E9800188E04 /* Info.plist */,
 			);
 			path = RpgDiceTests;
@@ -415,7 +421,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9927282324EAB47C00535E30 /* DiceTests.swift in Sources */,
 				99E92D7524819E9800188E04 /* RpgDiceTests.swift in Sources */,
+				9927282524EAB6A000535E30 /* HistoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
