@@ -11,6 +11,7 @@
 		9926561E24E959BF006FD3C9 /* SpellsReponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9926561D24E959BF006FD3C9 /* SpellsReponse.swift */; };
 		9927282324EAB47C00535E30 /* DiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9927282224EAB47C00535E30 /* DiceTests.swift */; };
 		9927282524EAB6A000535E30 /* HistoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9927282424EAB6A000535E30 /* HistoryTests.swift */; };
+		9927282624EAFD6700535E30 /* RpgDice.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9970AA4C24E054510087C25F /* RpgDice.xcdatamodeld */; };
 		992A0C2124E1C81E00289108 /* DndAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A0C2024E1C81E00289108 /* DndAPI.swift */; };
 		992A0C2324E1CA2C00289108 /* BaseResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A0C2224E1CA2C00289108 /* BaseResult.swift */; };
 		992A0C2524E1CBE400289108 /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992A0C2424E1CBE400289108 /* LibraryViewController.swift */; };
@@ -423,6 +424,7 @@
 			files = (
 				9927282324EAB47C00535E30 /* DiceTests.swift in Sources */,
 				99E92D7524819E9800188E04 /* RpgDiceTests.swift in Sources */,
+				9927282624EAFD6700535E30 /* RpgDice.xcdatamodeld in Sources */,
 				9927282524EAB6A000535E30 /* HistoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

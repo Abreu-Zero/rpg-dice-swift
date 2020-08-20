@@ -8,10 +8,10 @@
 
 @testable import RpgDice
 import XCTest
+import CoreData
 
 class HistoryTests: XCTestCase {
-
-
+    
     func testFormatDate(){
         let calendar = Calendar.current
         var components = DateComponents()
@@ -29,6 +29,4 @@ class HistoryTests: XCTestCase {
         
         XCTAssertTrue(history.formatDate(date: newDate!) == dateString)
     }
-    
-
 }
