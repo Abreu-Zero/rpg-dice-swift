@@ -38,7 +38,6 @@
 		99E92D6524819E9200188E04 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E92D6324819E9200188E04 /* Main.storyboard */; };
 		99E92D6724819E9800188E04 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 99E92D6624819E9800188E04 /* Assets.xcassets */; };
 		99E92D6A24819E9800188E04 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 99E92D6824819E9800188E04 /* LaunchScreen.storyboard */; };
-		99E92D7524819E9800188E04 /* RpgDiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E92D7424819E9800188E04 /* RpgDiceTests.swift */; };
 		99E92D8024819E9800188E04 /* RpgDiceUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99E92D7F24819E9800188E04 /* RpgDiceUITests.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,7 +93,6 @@
 		99E92D6924819E9800188E04 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		99E92D6B24819E9800188E04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99E92D7024819E9800188E04 /* RpgDiceTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RpgDiceTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		99E92D7424819E9800188E04 /* RpgDiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RpgDiceTests.swift; sourceTree = "<group>"; };
 		99E92D7624819E9800188E04 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		99E92D7B24819E9800188E04 /* RpgDiceUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RpgDiceUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		99E92D7F24819E9800188E04 /* RpgDiceUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RpgDiceUITests.swift; sourceTree = "<group>"; };
@@ -242,7 +240,6 @@
 		99E92D7324819E9800188E04 /* RpgDiceTests */ = {
 			isa = PBXGroup;
 			children = (
-				99E92D7424819E9800188E04 /* RpgDiceTests.swift */,
 				9927282224EAB47C00535E30 /* DiceTests.swift */,
 				9927282424EAB6A000535E30 /* HistoryTests.swift */,
 				99E92D7624819E9800188E04 /* Info.plist */,
@@ -423,7 +420,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				9927282324EAB47C00535E30 /* DiceTests.swift in Sources */,
-				99E92D7524819E9800188E04 /* RpgDiceTests.swift in Sources */,
 				9927282624EAFD6700535E30 /* RpgDice.xcdatamodeld in Sources */,
 				9927282524EAB6A000535E30 /* HistoryTests.swift in Sources */,
 			);

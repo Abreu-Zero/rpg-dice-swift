@@ -17,7 +17,7 @@ class DiceTests: XCTestCase {
     }
     
     let min = 1
-    let dice = DicesViewController()
+    let dice: DicesViewController = DicesViewController()
     
     func testD4(){
         let max = 4
