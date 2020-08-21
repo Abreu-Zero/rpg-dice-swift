@@ -55,17 +55,7 @@ class MonstersBookViewController: UIViewController {
         hpLabel.text = "\nHP: \(monster.hitPoints)"
         hitDiceLabel.text = "\nHit Dice: \(monster.hitDice)"
         
-        speedLabel.text = "\nSpeed: "
-        if let walk = monster.speed.walk{
-            speedLabel.text! += "\nWalk: \(walk)"
-        }
-        if let swim = monster.speed.swim{
-            speedLabel.text! += "\nSwim: \(swim)"
-        }
-        if let fly = monster.speed.fly{
-            speedLabel.text! += "\nFly: \(fly)"
-        }
-        speedLabel.text! += "\n"
+        speedLabel.text = checkSpeed(monster: monster)
         
         strLabel.text = "STR: \(monster.strength)"
         dexLabel.text = "DEX: \(monster.dexterity)"
@@ -74,17 +64,7 @@ class MonstersBookViewController: UIViewController {
         wisLabel.text = "WIS: \(monster.wisdom)"
         chaLabel.text = "CHA: \(monster.charisma)"
         
-        if let proficiency = monster.proficiencies{
-            if proficiency.count == 0{
-                proficienciesLabel.text = ""
-            }else{
-               proficienciesLabel.text = "\n\nProeficiencies:\n"
-            }
-            for p in proficiency{
-                proficienciesLabel.text! += "\n\(p.name) Value: \(p.value!)\n"
-                proficienciesLabel.numberOfLines += 2
-            }
-        }
+        proficienciesLabel.text = checkProficiencies(monster: monster)
         
         checkResistance(label: damageVulnerabilitiesLabel, name: "\nDamage Vulnerabilities:", resistance: monster.damageVulnerabilities)
         checkResistance(label: damageResistencesLabel, name: "Damage Resistance:", resistance: monster.damageResistences)
@@ -161,6 +141,38 @@ class MonstersBookViewController: UIViewController {
                 }
             }
         }
+    }
+    
+    func checkSpeed(monster: MonsterResponse) -> String{
+        var speed = "\nSpeed: "
+        
+        if let walk = monster.speed.walk{
+            speed += "\nWalk: \(walk)"
+        }
+        if let swim = monster.speed.swim{
+            speed += "\nSwim: \(swim)"
+        }
+        if let fly = monster.speed.fly{
+            speed += "\nFly: \(fly)"
+        }
+        speed += "\n"
+        
+        return speed
+    }
+    
+    func checkProficiencies(monster: MonsterResponse) -> String{
+        var prof: String = ""
+        
+        if let proficiency = monster.proficiencies{
+            if proficiency.count > 0{
+                prof = "\n\nProeficiencies:\n"
+                for p in proficiency{
+                    prof += "\n\(p.name) Value: \(p.value!)\n"
+                }
+            }
+        }
+        
+        return prof
     }
 
         
