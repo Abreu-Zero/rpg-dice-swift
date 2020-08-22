@@ -87,14 +87,7 @@ class MonstersBookViewController: UIViewController {
         }
         challengeRatingLabel.text = "\nChallenge Rating: \(Int(monster.challangeRating))"
         
-        specialAbilitiesLabel.text = "\nSPECIAL ABILITIES:"
-        guard let specialAbilities = monster.specialAbilities else{
-             specialAbilitiesLabel.text! = ""
-            return}
-        for special in specialAbilities{
-            specialAbilitiesLabel.text! += "\n\n\(special.name)\n\nDescription: \(special.desc)\n"
-            specialAbilitiesLabel.numberOfLines += 10
-        }
+        specialAbilitiesLabel.text = checkSpecialAbilities(monster: monster)
         
         actionsLabel.text = ""
         if let actions = monster.actions{
@@ -173,6 +166,20 @@ class MonstersBookViewController: UIViewController {
         }
         
         return prof
+    }
+    
+    func checkSpecialAbilities(monster: MonsterResponse) -> String{
+        var specialAbilitiesString = ""
+        
+        guard let specialAbilities = monster.specialAbilities else{
+            return specialAbilitiesString}
+        specialAbilitiesString = "\nSPECIAL ABILITIES:"
+        for special in specialAbilities{
+            specialAbilitiesString += "\n\n\(special.name)\n\nDescription: \(special.desc)\n"
+            specialAbilitiesLabel.numberOfLines += 10
+        }
+        
+        return specialAbilitiesString
     }
 
         
