@@ -96,6 +96,38 @@ class MonstersBookViewController: UIViewController {
    
     }
     
+    func checkSpeed(monster: MonsterResponse) -> String{
+        var speed = "\nSpeed: "
+        
+        if let walk = monster.speed.walk{
+            speed += "\nWalk: \(walk)"
+        }
+        if let swim = monster.speed.swim{
+            speed += "\nSwim: \(swim)"
+        }
+        if let fly = monster.speed.fly{
+            speed += "\nFly: \(fly)"
+        }
+        speed += "\n"
+        
+        return speed
+    }
+    
+    func checkProficiencies(monster: MonsterResponse) -> String{
+        var prof: String = ""
+    
+        if let proficiency = monster.proficiencies{
+            if proficiency.count > 0{
+                prof = "\n\nProeficiencies:\n"
+                for p in proficiency{
+                    prof += "\n\(p.name) Value: \(p.value!)\n"
+                    proficienciesLabel.numberOfLines += 2
+                }
+            }
+        }
+        return prof
+    }
+    
     func checkResistance(label: UILabel, name: String, resistance: [String]) -> String{
         var resistanceString = name
         if resistance.count == 0{
@@ -109,6 +141,21 @@ class MonstersBookViewController: UIViewController {
         
         return resistanceString
     }
+    
+    func checkConditionImunities(monster: MonsterResponse) -> String{
+        var responseString = "Condition Immunities:"
+        
+        if monster.conditionImmunities.count == 0{
+            responseString += "\nnone"
+        }else{
+            for cond in monster.conditionImmunities{
+                 responseString += "\n\(cond["name"]!)\n"
+            }
+        }
+        
+        return responseString
+    }
+        
     
     func checkActions(label: UILabel, name: String, actions: [Action]) -> String{
         var returnString = name
@@ -134,39 +181,6 @@ class MonstersBookViewController: UIViewController {
         return returnString
     }
     
-    func checkSpeed(monster: MonsterResponse) -> String{
-        var speed = "\nSpeed: "
-        
-        if let walk = monster.speed.walk{
-            speed += "\nWalk: \(walk)"
-        }
-        if let swim = monster.speed.swim{
-            speed += "\nSwim: \(swim)"
-        }
-        if let fly = monster.speed.fly{
-            speed += "\nFly: \(fly)"
-        }
-        speed += "\n"
-        
-        return speed
-    }
-    
-    func checkProficiencies(monster: MonsterResponse) -> String{
-        var prof: String = ""
-        
-        if let proficiency = monster.proficiencies{
-            if proficiency.count > 0{
-                prof = "\n\nProeficiencies:\n"
-                for p in proficiency{
-                    prof += "\n\(p.name) Value: \(p.value!)\n"
-                    proficienciesLabel.numberOfLines += 2
-                }
-            }
-        }
-        
-        return prof
-    }
-    
     func checkSpecialAbilities(monster: MonsterResponse) -> String{
         var specialAbilitiesString = ""
         
@@ -180,23 +194,4 @@ class MonstersBookViewController: UIViewController {
         
         return specialAbilitiesString
     }
-
-    func checkConditionImunities(monster: MonsterResponse) -> String{
-        var responseString = "Condition Immunities:"
-        
-        if monster.conditionImmunities.count == 0{
-            responseString += "\nnone"
-        }else{
-            for cond in monster.conditionImmunities{
-                 responseString += "\n\(cond["name"]!)\n"
-            }
-        }
-        
-        return responseString
-    }
-        
-        
-    
-    
-
 }
