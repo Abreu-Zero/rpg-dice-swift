@@ -57,6 +57,7 @@ class MonstersBookViewController: UIViewController {
         
         speedLabel.text = checkSpeed(monster: monster)
         
+        //Atributes
         strLabel.text = "STR: \(monster.strength)"
         dexLabel.text = "DEX: \(monster.dexterity)"
         conLabel.text = "CON: \(monster.constitution)"
@@ -66,19 +67,13 @@ class MonstersBookViewController: UIViewController {
         
         proficienciesLabel.text = checkProficiencies(monster: monster)
         
-        checkResistance(label: damageVulnerabilitiesLabel, name: "\nDamage Vulnerabilities:", resistance: monster.damageVulnerabilities)
-        checkResistance(label: damageResistencesLabel, name: "Damage Resistance:", resistance: monster.damageResistences)
-        checkResistance(label: damageImmunitiesLabel, name: "Damage Immunities:", resistance:  monster.damageImmunities)
+        //Damage Modifiers
+        damageVulnerabilitiesLabel.text = checkResistance(label: damageVulnerabilitiesLabel, name: "\nDamage Vulnerabilities:", resistance: monster.damageVulnerabilities)
+        damageResistencesLabel.text = checkResistance(label: damageResistencesLabel, name: "Damage Resistance:",  resistance: monster.damageResistences)
+        damageImmunitiesLabel.text = checkResistance(label: damageImmunitiesLabel, name: "Damage Immunities:", resistance:  monster.damageImmunities)
         
-        conditionsImmunitiesLabel.text = "Condition Immunities:"
+        conditionsImmunitiesLabel.text = checkConditionImunities(monster: monster)
         
-        if monster.conditionImmunities.count == 0{
-            conditionsImmunitiesLabel.text! += "\nnone"
-        }else{
-            for cond in monster.conditionImmunities{
-                 conditionsImmunitiesLabel.text! += "\n\(cond["name"]!)\n"
-            }
-        }
         if monster.languages.count == 0{
             languagesLabel.text = ""
         }else{
@@ -91,49 +86,52 @@ class MonstersBookViewController: UIViewController {
         
         actionsLabel.text = ""
         if let actions = monster.actions{
-            checkActions(label: actionsLabel, name: "ACTIONS: ", actions: actions)
+            actionsLabel.text = checkActions(label: actionsLabel, name: "ACTIONS: ", actions: actions)
         }
         
         legendaryActionsLabel.text = ""
         if let lActions = monster.legendaryActions{
-            checkActions(label: legendaryActionsLabel, name: "\n\nLEGENDARY ACTIONS: ", actions: lActions)
+            legendaryActionsLabel.text = checkActions(label: legendaryActionsLabel, name: "\n\nLEGENDARY ACTIONS: ", actions: lActions)
         }
    
     }
     
-    func checkResistance(label: UILabel, name: String, resistance: [String]){
-        label.text = name
+    func checkResistance(label: UILabel, name: String, resistance: [String]) -> String{
+        var resistanceString = name
         if resistance.count == 0{
-            label.text! += "\nnone"
+            resistanceString += "\nnone"
         }
         
         for r in resistance{
-            label.text! += "\n\(r)"
+            resistanceString += "\n\(r)"
             label.numberOfLines += 1
         }
+        
+        return resistanceString
     }
     
-    func checkActions(label: UILabel, name: String, actions: [Action]){
-        label.text = name
+    func checkActions(label: UILabel, name: String, actions: [Action]) -> String{
+        var returnString = name
 
         if actions.count == 0{
-            label.text! += "\nnone"
+            returnString += "\nnone"
         } else{
             for action in actions{
-                label.text! += "\n\n\(action.name)\n\nDescription: \(action.description)\n"
+                returnString += "\n\n\(action.name)\n\nDescription: \(action.description)\n"
                 if action.attackBonus != nil {
-                    label.text! += "-ATK Bonus: \(action.attackBonus!)\n"
+                    returnString += "-ATK Bonus: \(action.attackBonus!)\n"
                 }
                 if action.damage != nil {
                     for d in action.damage!{
-                        label.text! += "-Damage: \(d.damageDice!)\n"
-                        label.text! += "-Type: \(d.damageType!["name"]!)"
+                        returnString += "-Damage: \(d.damageDice!)\n"
+                        returnString += "-Type: \(d.damageType!["name"]!)"
                         label.numberOfLines += 10
                     }
                     
                 }
             }
         }
+        return returnString
     }
     
     func checkSpeed(monster: MonsterResponse) -> String{
@@ -161,6 +159,7 @@ class MonstersBookViewController: UIViewController {
                 prof = "\n\nProeficiencies:\n"
                 for p in proficiency{
                     prof += "\n\(p.name) Value: \(p.value!)\n"
+                    proficienciesLabel.numberOfLines += 2
                 }
             }
         }
@@ -182,6 +181,19 @@ class MonstersBookViewController: UIViewController {
         return specialAbilitiesString
     }
 
+    func checkConditionImunities(monster: MonsterResponse) -> String{
+        var responseString = "Condition Immunities:"
+        
+        if monster.conditionImmunities.count == 0{
+            responseString += "\nnone"
+        }else{
+            for cond in monster.conditionImmunities{
+                 responseString += "\n\(cond["name"]!)\n"
+            }
+        }
+        
+        return responseString
+    }
         
         
     
