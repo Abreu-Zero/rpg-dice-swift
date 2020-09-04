@@ -34,7 +34,6 @@ struct Equipment: Codable{
 }
 
 struct Item: Codable{
-    let id: String
     let index: String
     let name: String
     let equipment: [String : String]
@@ -49,7 +48,7 @@ struct Item: Codable{
     let tool: String?
     
     // Gear exc
-    let gear: String?
+    let gear: [String : String]?
     
     // Adventuring exc
     let contents: [ContentAdnv]?
@@ -68,7 +67,6 @@ struct Item: Codable{
         
     enum CodingKeys: String, CodingKey{
             
-        case id = "_id"
         case index
         case name
         case equipment = "equipment_category"
