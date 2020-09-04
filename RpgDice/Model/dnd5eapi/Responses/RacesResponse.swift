@@ -9,7 +9,6 @@
 import Foundation
 
 struct RacesResponse: Codable, Category{
-    let id: String
     let index: String
     let name: String
     let speed: Float
@@ -25,7 +24,6 @@ struct RacesResponse: Codable, Category{
     let traitOptions: Choices?
     
     enum CodingKeys: String, CodingKey{
-        case id = "_id"
         case index
         case name
         case speed

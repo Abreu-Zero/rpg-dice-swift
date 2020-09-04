@@ -10,7 +10,6 @@ import Foundation
 
 struct AbilityScores: Codable, Category{
     
-    let id: String
     let index: String
     let name: String
     let fullName: String
@@ -20,7 +19,6 @@ struct AbilityScores: Codable, Category{
     
     enum CodingKeys: String, CodingKey{
         
-        case id = "_id"
         case index
         case name
         case fullName = "full_name"

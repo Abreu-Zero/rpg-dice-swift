@@ -10,7 +10,6 @@ import Foundation
 
 struct MonsterResponse: Codable, Category{
     
-    let id: String
     let index: String
     let name: String
     let size: String
@@ -40,7 +39,6 @@ struct MonsterResponse: Codable, Category{
     
     enum CodingKeys: String, CodingKey{
         
-        case id = "_id"
         case index
         case name
         case size

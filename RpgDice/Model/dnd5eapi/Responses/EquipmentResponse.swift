@@ -12,7 +12,6 @@ import Foundation
 
 struct EquipmentResponse: Codable, Category{
     
-    let id: String
     let index: String
     let name: String
     let equipment: [Equipment]
@@ -20,7 +19,6 @@ struct EquipmentResponse: Codable, Category{
         
     enum CodingKeys: String, CodingKey{
             
-        case id = "_id"
         case index
         case name
         case equipment

@@ -27,6 +27,7 @@
 		99760F8524E976EB002D1390 /* SpellsBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99760F8424E976EB002D1390 /* SpellsBookViewController.swift */; };
 		997EEFD324E4799500E95190 /* EquipmentResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997EEFD224E4799500E95190 /* EquipmentResponse.swift */; };
 		997EEFD524E47A8000E95190 /* EquipBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997EEFD424E47A8000E95190 /* EquipBookViewController.swift */; };
+		9983055024F436DF00A228DC /* LibraryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9983054F24F436DF00A228DC /* LibraryTests.swift */; };
 		99A11FA124E432370076E6D3 /* ClassesBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99A11FA024E432370076E6D3 /* ClassesBookViewController.swift */; };
 		99AB9E5C24E3F3EB00D59A8F /* LinkedList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB9E5B24E3F3EB00D59A8F /* LinkedList.swift */; };
 		99AB9E5F24E4024D00D59A8F /* AbilityScores.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99AB9E5E24E4024D00D59A8F /* AbilityScores.swift */; };
@@ -79,6 +80,7 @@
 		99760F8424E976EB002D1390 /* SpellsBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpellsBookViewController.swift; sourceTree = "<group>"; };
 		997EEFD224E4799500E95190 /* EquipmentResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipmentResponse.swift; sourceTree = "<group>"; };
 		997EEFD424E47A8000E95190 /* EquipBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EquipBookViewController.swift; sourceTree = "<group>"; };
+		9983054F24F436DF00A228DC /* LibraryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryTests.swift; sourceTree = "<group>"; };
 		99A11FA024E432370076E6D3 /* ClassesBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassesBookViewController.swift; sourceTree = "<group>"; };
 		99AB9E5B24E3F3EB00D59A8F /* LinkedList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedList.swift; sourceTree = "<group>"; };
 		99AB9E5E24E4024D00D59A8F /* AbilityScores.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbilityScores.swift; sourceTree = "<group>"; };
@@ -242,6 +244,7 @@
 			children = (
 				9927282224EAB47C00535E30 /* DiceTests.swift */,
 				9927282424EAB6A000535E30 /* HistoryTests.swift */,
+				9983054F24F436DF00A228DC /* LibraryTests.swift */,
 				99E92D7624819E9800188E04 /* Info.plist */,
 			);
 			path = RpgDiceTests;
@@ -420,6 +423,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9927282324EAB47C00535E30 /* DiceTests.swift in Sources */,
+				9983055024F436DF00A228DC /* LibraryTests.swift in Sources */,
 				9927282624EAFD6700535E30 /* RpgDice.xcdatamodeld in Sources */,
 				9927282524EAB6A000535E30 /* HistoryTests.swift in Sources */,
 			);
