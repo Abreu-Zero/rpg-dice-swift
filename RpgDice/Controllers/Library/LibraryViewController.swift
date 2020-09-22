@@ -149,7 +149,6 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func handleDndRequest(row: Int){
         activityIndicator.startAnimating()
-        self.results = []
         DndAPI.requestBase(endpoint: linkedList.index(index: row)!.value) { (result, error) in
             guard let result = result else{
                 DispatchQueue.main.async {
@@ -158,6 +157,11 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
                 return
             }
+            DispatchQueue.main.async {
+                self.results = []
+                self.tableView.reloadData()
+            }
+            
             for r in result.results{
                 if r.url != nil{
                     self.results.append(r)
