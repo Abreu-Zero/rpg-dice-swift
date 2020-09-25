@@ -87,7 +87,9 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
         DndAPI.categoryRequest(url: results[indexPath.row].url!, category: self.category) { (result, error) in
             guard let result = result else{
                 print(error!)
-                self.showAlertError(errorCode: error?.localizedDescription ?? "Some random error")
+                DispatchQueue.main.async {
+                    self.showAlertError(errorCode: error?.localizedDescription ?? "Some random error")
+                }
                 return
             }
             self.toSend = result
