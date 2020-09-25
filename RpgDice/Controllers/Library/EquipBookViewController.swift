@@ -8,9 +8,6 @@
 
 import UIKit
 
-
-//TODO: add activityIndicator for requests
-
 class EquipBookViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var picker: UIPickerView!
@@ -25,6 +22,7 @@ class EquipBookViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     @IBOutlet weak var damageLabel: UILabel!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    //TODO: fix the layout issues
     var category: EquipmentResponse?
     var equips: [Equipment] = []
     
