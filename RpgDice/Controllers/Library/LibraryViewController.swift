@@ -157,8 +157,8 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
                 }
                 return
             }
+            self.results = []
             DispatchQueue.main.async {
-                self.results = []
                 self.tableView.reloadData()
             }
             
