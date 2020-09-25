@@ -84,6 +84,7 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         activityIndicator.startAnimating()
+        print(results[indexPath.row].url!)
         DndAPI.categoryRequest(url: results[indexPath.row].url!, category: self.category) { (result, error) in
             guard let result = result else{
                 print(error!)

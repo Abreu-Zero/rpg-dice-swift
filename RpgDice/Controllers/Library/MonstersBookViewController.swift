@@ -120,7 +120,7 @@ class MonstersBookViewController: UIViewController {
             if proficiency.count > 0{
                 prof = "\n\nProeficiencies:\n"
                 for p in proficiency{
-                    prof += "\n\(p.name) Value: \(p.value!)\n"
+                    prof += "\n\(p.proficiency.name) Value: \(p.value!)\n"
                     proficienciesLabel.numberOfLines += 2
                 }
             }
