@@ -8,8 +8,6 @@
 
 import Foundation
 
-// TODO: create the remaining structs
-
 struct EquipmentResponse: Codable, Category{
     
     let index: String
