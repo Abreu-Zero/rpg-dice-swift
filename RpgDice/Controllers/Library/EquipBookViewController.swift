@@ -75,7 +75,18 @@ class EquipBookViewController: UIViewController, UIPickerViewDelegate, UIPickerV
                 self.activityIndicator.stopAnimating()
                 //Setting the base text
                 self.nameLabel.text = "Name: \(item.name)"
-                self.costLabel.text = "Cost: \(String(item.cost.quantity))\(item.cost.unit)"
+                guard let cost = item.cost else{ //if dont have cost is magic item
+                    self.costLabel.text = ""
+                    self.catLabel.text = ""
+                    self.classLabel.text = ""
+                    self.rangeLabel.text = ""
+                    self.damageLabel.text = ""
+                    self.typeLabel.text = ""
+                    self.weightLabel.text = item.itemDescription![0]
+                    self.descLabel.text = item.itemDescription![1]
+                    return
+                }
+                self.costLabel.text = "Cost: \(String(cost.quantity))\(cost.unit)"
                 self.descLabel.text = "Description: \(item.itemDescription?[0] ?? "No Description")"
                 
                 //Using the optionals

@@ -58,7 +58,7 @@ struct Item: Codable{
     let damage: Damage?
     let range: [String : Float?]?
     
-    let cost: ItemCost
+    let cost: ItemCost?
     let weight: Float?
     let itemDescription: [String]?
     let url: String
