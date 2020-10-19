@@ -6,6 +6,7 @@
 //  Copyright © 2020 Henrique Abreu. All rights reserved.
 //
 
+@testable import RpgDice
 import XCTest
 
 class RpgDiceUITests: XCTestCase {

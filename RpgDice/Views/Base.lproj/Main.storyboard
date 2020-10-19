@@ -1067,6 +1067,9 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="resultLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txA-JS-RdR">
                                 <rect key="frame" x="89.666666666666686" y="384.66666666666669" width="196" height="42.666666666666686"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42.666666666666686" id="Fyx-rt-WnW"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="36"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
