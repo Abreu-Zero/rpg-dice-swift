@@ -89,6 +89,7 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ql6-uq-WFV">
                                 <rect key="frame" x="16" y="20" width="343" height="75"/>
+                                <accessibility key="accessibilityConfiguration" identifier="abilityNameLabel"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="75" id="fF9-cV-5i1"/>
                                 </constraints>
@@ -394,6 +395,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Druid" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pi8-Ne-9Jh">
                                         <rect key="frame" x="151.33333333333334" y="0.0" width="56.333333333333343" height="125"/>
+                                        <accessibility key="accessibilityConfiguration" identifier="classNameLabel"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>

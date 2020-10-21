@@ -104,15 +104,30 @@ class RpgDiceUITests: XCTestCase {
     }
     
     func testAbilitiesWork(){
-        
+        app.buttons["Library"].tap()
+        app.tables/*@START_MENU_TOKEN@*/.staticTexts["CHA"]/*[[".cells.staticTexts[\"CHA\"]",".staticTexts[\"CHA\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/.tap()
+        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "abilityNameLabel").label, "Charisma")
     }
     
     func testClassesWork(){
-        
+        app.buttons["Library"].tap()
+        app.pickerWheels["Abilities"].adjust(toPickerWheelValue: "Classes")
+        app.tables.staticTexts["Wizard"].tap()
+        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "classNameLabel").label, "Wizard")
     }
     
     func testEquipmentWork(){
-        
+        app.buttons["Library"].tap()
+        app.pickerWheels["Abilities"].adjust(toPickerWheelValue: "Equipment")
+        sleep(3)
+        XCTAssert(app.tables.staticTexts["Ammunition"].exists)
+    }
+    
+    func testArmorWork(){
+        //open library
+        //set picker to equipment
+        //tap armor
+        //test picker for all values
     }
 
 //    func testLaunchPerformance() throws {
