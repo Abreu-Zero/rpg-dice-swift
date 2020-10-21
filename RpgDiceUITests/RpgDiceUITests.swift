@@ -71,6 +71,39 @@ class RpgDiceUITests: XCTestCase {
         guard let roll = result else {return}
         XCTAssertTrue(1 <= roll && roll <= 20)
     }
+    
+    func testGoToHistory() throws{
+        app.buttons["Dice"].tap()
+        app.buttons["History"].tap()
+        XCUIApplication().navigationBars["RpgDice.HistoryView"].buttons["Dice"].tap()
+        XCTAssertTrue(app.buttons["History"].exists)
+        
+    }
+    
+    func testLibraryWorks() throws {
+        app.buttons["Library"].tap()
+        XCUIApplication().pickerWheels["Abilities"].tap()
+        let tablesQuery = app.tables
+        var count = tablesQuery.cells.count
+        XCTAssert(count > 0)
+        XCUIApplication().pickerWheels["Abilities"].adjust(toPickerWheelValue: "Classes")
+        count = tablesQuery.cells.count
+        XCTAssert(count > 0)
+        XCUIApplication().pickerWheels["Classes"].adjust(toPickerWheelValue: "Equipment")
+        count = tablesQuery.cells.count
+        XCTAssert(count > 0)
+        XCUIApplication().pickerWheels["Equipment"].adjust(toPickerWheelValue: "Monsters")
+        count = tablesQuery.cells.count
+        XCTAssert(count > 0)
+        XCUIApplication().pickerWheels["Monsters"].adjust(toPickerWheelValue: "Races")
+        count = tablesQuery.cells.count
+        XCTAssert(count > 0)
+        XCUIApplication().pickerWheels["Races"].adjust(toPickerWheelValue: "Spells")
+        count = tablesQuery.cells.count
+        XCTAssert(count > 0)
+        
+        
+    }
 
 //    func testLaunchPerformance() throws {
 //        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
