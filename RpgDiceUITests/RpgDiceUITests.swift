@@ -23,7 +23,7 @@ class RpgDiceUITests: XCTestCase {
     override func tearDownWithError() throws {
     }
 
-    func testD4() throws {
+    func testD4(){
         app.buttons["Dice"].tap()
         app.buttons["D4"].tap()
         let result = Int(app.staticTexts.element(matching: .any, identifier: "resultLabelId").label)
@@ -32,7 +32,7 @@ class RpgDiceUITests: XCTestCase {
 
     }
     
-    func testD6() throws {
+    func testD6(){
         app.buttons["Dice"].tap()
         app.buttons["D6"].tap()
         let result = Int(app.staticTexts.element(matching: .any, identifier: "resultLabelId").label)
@@ -40,7 +40,7 @@ class RpgDiceUITests: XCTestCase {
         XCTAssertTrue(1 <= roll && roll <= 6)
     }
     
-    func testD8() throws {
+    func testD8(){
         app.buttons["Dice"].tap()
         app.buttons["D8"].tap()
         let result = Int(app.staticTexts.element(matching: .any, identifier: "resultLabelId").label)
@@ -48,7 +48,7 @@ class RpgDiceUITests: XCTestCase {
         XCTAssertTrue(1 <= roll && roll <= 8)
     }
     
-    func testD10() throws {
+    func testD10(){
         app.buttons["Dice"].tap()
         app.buttons["D10"].tap()
         let result = Int(app.staticTexts.element(matching: .any, identifier: "resultLabelId").label)
@@ -56,7 +56,7 @@ class RpgDiceUITests: XCTestCase {
         XCTAssertTrue(1 <= roll && roll <= 10)
     }
     
-    func testD12() throws {
+    func testD12(){
         app.buttons["Dice"].tap()
         app.buttons["D12"].tap()
         let result = Int(app.staticTexts.element(matching: .any, identifier: "resultLabelId").label)
@@ -64,7 +64,7 @@ class RpgDiceUITests: XCTestCase {
         XCTAssertTrue(1 <= roll && roll <= 12)
     }
     
-    func testD20() throws {
+    func testD20(){
         app.buttons["Dice"].tap()
         app.buttons["D20"].tap()
         let result = Int(app.staticTexts.element(matching: .any, identifier: "resultLabelId").label)
@@ -72,7 +72,7 @@ class RpgDiceUITests: XCTestCase {
         XCTAssertTrue(1 <= roll && roll <= 20)
     }
     
-    func testGoToHistory() throws{
+    func testGoToHistory(){
         app.buttons["Dice"].tap()
         app.buttons["History"].tap()
         XCUIApplication().navigationBars["RpgDice.HistoryView"].buttons["Dice"].tap()
@@ -80,28 +80,38 @@ class RpgDiceUITests: XCTestCase {
         
     }
     
-    func testLibraryWorks() throws {
+    func testLibraryWorks(){
         app.buttons["Library"].tap()
-        XCUIApplication().pickerWheels["Abilities"].tap()
+        app.pickerWheels["Abilities"].tap()
         let tablesQuery = app.tables
         var count = tablesQuery.cells.count
         XCTAssert(count > 0)
-        XCUIApplication().pickerWheels["Abilities"].adjust(toPickerWheelValue: "Classes")
+        app.pickerWheels["Abilities"].adjust(toPickerWheelValue: "Classes")
         count = tablesQuery.cells.count
         XCTAssert(count > 0)
-        XCUIApplication().pickerWheels["Classes"].adjust(toPickerWheelValue: "Equipment")
+        app.pickerWheels["Classes"].adjust(toPickerWheelValue: "Equipment")
         count = tablesQuery.cells.count
         XCTAssert(count > 0)
-        XCUIApplication().pickerWheels["Equipment"].adjust(toPickerWheelValue: "Monsters")
+        app.pickerWheels["Equipment"].adjust(toPickerWheelValue: "Monsters")
         count = tablesQuery.cells.count
         XCTAssert(count > 0)
-        XCUIApplication().pickerWheels["Monsters"].adjust(toPickerWheelValue: "Races")
+        app.pickerWheels["Monsters"].adjust(toPickerWheelValue: "Races")
         count = tablesQuery.cells.count
         XCTAssert(count > 0)
-        XCUIApplication().pickerWheels["Races"].adjust(toPickerWheelValue: "Spells")
+        app.pickerWheels["Races"].adjust(toPickerWheelValue: "Spells")
         count = tablesQuery.cells.count
         XCTAssert(count > 0)
+    }
+    
+    func testAbilitiesWork(){
         
+    }
+    
+    func testClassesWork(){
+        
+    }
+    
+    func testEquipmentWork(){
         
     }
 
