@@ -118,16 +118,44 @@ class RpgDiceUITests: XCTestCase {
     
     func testEquipmentWork(){
         app.buttons["Library"].tap()
-        app.pickerWheels["Abilities"].adjust(toPickerWheelValue: "Equipment")
+        app.pickerWheels["Abilities"].adjust(toPickerWheelValue: "Classes")
+        app.pickerWheels["Classes"].adjust(toPickerWheelValue: "Equipment")
         sleep(3)
         XCTAssert(app.tables.staticTexts["Ammunition"].exists)
     }
     
     func testArmorWork(){
-        //open library
-        //set picker to equipment
-        //tap armor
-        //test picker for all values
+        app.buttons["Library"].tap()
+        app.pickerWheels["Abilities"].adjust(toPickerWheelValue: "Classes")
+        app.pickerWheels["Classes"].adjust(toPickerWheelValue: "Equipment")
+        sleep(3)
+        app.tables.staticTexts["Armor"].tap()
+        
+        var name = app.staticTexts.element(matching: .any, identifier: "equipNameLabel").label
+        XCTAssertEqual(name, "Name: Padded")
+        
+        app.pickerWheels["Padded"].adjust(toPickerWheelValue: "Spellguard Shield")
+        sleep(3)
+        name = app.staticTexts.element(matching: .any, identifier: "equipNameLabel").label
+        XCTAssertEqual(name, "Name: Spellguard Shield")
+    }
+    
+    func testMonstersWork(){ //monsterNameLabel
+        app.buttons["Library"].tap()
+        app.pickerWheels["Abilities"].adjust(toPickerWheelValue: "Classes")
+        app.pickerWheels["Classes"].adjust(toPickerWheelValue: "Equipment")
+        sleep(3)
+        app.pickerWheels["Equipment"].adjust(toPickerWheelValue: "Monsters")
+        
+        app.tables.staticTexts["Aboleth"].tap()
+        var name = app.staticTexts.element(matching: .any, identifier: "monsterNameLabel").label
+        XCTAssertEqual(name, "\nName: Aboleth")
+        
+        XCUIApplication().navigationBars["RpgDice.MonstersBookView"].buttons["Library"].tap()
+        
+        app.tables.staticTexts["Zombie"].tap()
+        name = app.staticTexts.element(matching: .any, identifier: "monsterNameLabel").label
+        XCTAssertEqual(name, "\nName: Zombie")
     }
 
 //    func testLaunchPerformance() throws {
