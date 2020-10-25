@@ -1,7 +1,7 @@
 # rpg-dice-swift
 
 
-For a long time, bacause of this quarantine, me and some friends are trying to play RPG via chat, mostly using Whatsapp and online dice rollers.
+For a long time, you know, because of this quarantine, me and some friends are trying to play RPG via chat - mostly using Whatsapp and online dice rollers.
 But there is this weird friend that always had the worst results ever and the other one that is always getting criticals and stuff.
 
 Seeing our struggle, I decided to take a look at the [D&D 5th Edition API](https://www.dnd5eapi.co/) 
@@ -25,5 +25,15 @@ Requirements and Specifications:
 * App could display a small manual for equipment
 * App could display spells
 * App could display classes and races
+
+How?
+-----
+
+You can just clone the project on Xcode and build and run at your device
+
+Update
+------
+
+Oct 2020 - They are always updating the results at the API part, so I decided to include a few UITests to keep checking if the app is working
 
 
