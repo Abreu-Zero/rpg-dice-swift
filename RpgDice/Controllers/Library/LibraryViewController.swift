@@ -83,9 +83,8 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
        }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        currentTask?.cancel()
         activityIndicator.startAnimating()
-        currentTask = DndAPI.categoryRequest(url: results[indexPath.row].url!, category: self.category) { (result, error) in
+        DndAPI.categoryRequest(url: results[indexPath.row].url!, category: self.category) { (result, error) in
             guard let result = result else{
                 print(error!)
                 DispatchQueue.main.async {
@@ -151,13 +150,14 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func handleDndRequest(row: Int){
+        currentTask?.cancel()
         activityIndicator.startAnimating()
-        DndAPI.requestBase(endpoint: linkedList.index(index: row)!.value) { (result, error) in
+        currentTask = DndAPI.requestBase(endpoint: linkedList.index(index: row)!.value) { (result, error) in
             guard let result = result else{
-                DispatchQueue.main.async {
-                    self.activityIndicator.stopAnimating()
-                    self.showAlertError(errorCode: error?.localizedDescription ?? "Could not retrieve the selected data.")
-                }
+//                DispatchQueue.main.async {
+//                    self.activityIndicator.stopAnimating()
+//                    self.showAlertError(errorCode: error?.localizedDescription ?? "Could not retrieve the selected data.")
+//                }
                 return
             }
             self.results = []
@@ -179,7 +179,7 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     func showAlertError(errorCode: String){
         let errorTitle = "ERROR"
-        let errorBody = errorCode + " touch ok to go back to the last screen"
+        let errorBody = errorCode + "\n touch ok to go back to the last screen"
         let actionTitle = "Ok"
         
         let alert = UIAlertController(title: errorTitle, message: errorBody, preferredStyle: UIAlertController.Style.alert)
