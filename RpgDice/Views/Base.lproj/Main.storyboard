@@ -166,6 +166,7 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j0w-y5-bdj">
                                                         <rect key="frame" x="164.33333333333334" y="0.0" width="47.666666666666657" height="100"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="racesNameLabel"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -294,6 +295,7 @@
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xJt-5J-7fU">
                                                         <rect key="frame" x="164.66666666666666" y="0.0" width="47" height="150.66666666666666"/>
+                                                        <accessibility key="accessibilityConfiguration" identifier="spellNameLabel"/>
                                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>

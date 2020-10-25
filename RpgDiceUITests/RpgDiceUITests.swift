@@ -90,15 +90,19 @@ class RpgDiceUITests: XCTestCase {
         count = tablesQuery.cells.count
         XCTAssert(count > 0)
         app.pickerWheels["Classes"].adjust(toPickerWheelValue: "Equipment")
+        sleep(3)
         count = tablesQuery.cells.count
         XCTAssert(count > 0)
         app.pickerWheels["Equipment"].adjust(toPickerWheelValue: "Monsters")
+        sleep(3)
         count = tablesQuery.cells.count
         XCTAssert(count > 0)
         app.pickerWheels["Monsters"].adjust(toPickerWheelValue: "Races")
+        sleep(3)
         count = tablesQuery.cells.count
         XCTAssert(count > 0)
         app.pickerWheels["Races"].adjust(toPickerWheelValue: "Spells")
+        sleep(3)
         count = tablesQuery.cells.count
         XCTAssert(count > 0)
     }
@@ -118,16 +122,14 @@ class RpgDiceUITests: XCTestCase {
     
     func testEquipmentWork(){
         app.buttons["Library"].tap()
-        app.pickerWheels["Abilities"].adjust(toPickerWheelValue: "Classes")
-        app.pickerWheels["Classes"].adjust(toPickerWheelValue: "Equipment")
+        app.pickerWheels["Abilities"].adjust(toPickerWheelValue: "Equipment")
         sleep(3)
         XCTAssert(app.tables.staticTexts["Ammunition"].exists)
     }
     
     func testArmorWork(){
         app.buttons["Library"].tap()
-        app.pickerWheels["Abilities"].adjust(toPickerWheelValue: "Classes")
-        app.pickerWheels["Classes"].adjust(toPickerWheelValue: "Equipment")
+        app.pickerWheels["Abilities"].adjust(toPickerWheelValue: "Equipment")
         sleep(3)
         app.tables.staticTexts["Armor"].tap()
         
@@ -142,10 +144,7 @@ class RpgDiceUITests: XCTestCase {
     
     func testMonstersWork(){ //monsterNameLabel
         app.buttons["Library"].tap()
-        app.pickerWheels["Abilities"].adjust(toPickerWheelValue: "Classes")
-        app.pickerWheels["Classes"].adjust(toPickerWheelValue: "Equipment")
-        sleep(3)
-        app.pickerWheels["Equipment"].adjust(toPickerWheelValue: "Monsters")
+        app.pickerWheels["Abilities"].adjust(toPickerWheelValue: "Monsters")
         
         app.tables.staticTexts["Aboleth"].tap()
         var name = app.staticTexts.element(matching: .any, identifier: "monsterNameLabel").label
@@ -156,6 +155,20 @@ class RpgDiceUITests: XCTestCase {
         app.tables.staticTexts["Zombie"].tap()
         name = app.staticTexts.element(matching: .any, identifier: "monsterNameLabel").label
         XCTAssertEqual(name, "\nName: Zombie")
+    }
+    
+    func testRacesWork(){
+        app.buttons["Library"].tap()
+        app.pickerWheels["Abilities"].adjust(toPickerWheelValue: "Races")
+        app.tables.staticTexts["Dragonborn"].tap()
+        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "racesNameLabel").label, "Dragonborn")
+    }
+    
+    func testSpellsWork(){
+        app.buttons["Library"].tap()
+        app.pickerWheels["Abilities"].adjust(toPickerWheelValue: "Spells")
+        app.tables.staticTexts["Zone of Truth"].tap()
+        XCTAssertEqual(app.staticTexts.element(matching: .any, identifier: "spellNameLabel").label, "\nZone of Truth")
     }
 
 //    func testLaunchPerformance() throws {
