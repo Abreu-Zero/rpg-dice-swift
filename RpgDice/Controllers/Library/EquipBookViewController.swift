@@ -25,6 +25,7 @@ class EquipBookViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     //TODO: fix the layout issues
     var category: EquipmentResponse?
     var equips: [Equipment] = []
+    var currentTask: URLSessionTask?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,8 +66,9 @@ class EquipBookViewController: UIViewController, UIPickerViewDelegate, UIPickerV
     }
     
     func populateTheStackView(row: Int){
+        currentTask?.cancel()
         self.activityIndicator.startAnimating()
-        DndAPI.equipRequest(url: equips[row].url) { (item, error) in
+        currentTask = DndAPI.equipRequest(url: equips[row].url) { (item, error) in
             guard let item = item else{
                 print(error!)
                 return

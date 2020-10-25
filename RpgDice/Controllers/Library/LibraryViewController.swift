@@ -20,6 +20,7 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
     let linkedList = LinkedList()
     var toSend: Category?
     var category: String = ""
+    var currentTask: URLSessionTask?
     
     //MARK: viewDid funcs
 
@@ -82,9 +83,9 @@ class LibraryViewController: UIViewController, UITableViewDelegate, UITableViewD
        }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        currentTask?.cancel()
         activityIndicator.startAnimating()
-        DndAPI.categoryRequest(url: results[indexPath.row].url!, category: self.category) { (result, error) in
+        currentTask = DndAPI.categoryRequest(url: results[indexPath.row].url!, category: self.category) { (result, error) in
             guard let result = result else{
                 print(error!)
                 DispatchQueue.main.async {

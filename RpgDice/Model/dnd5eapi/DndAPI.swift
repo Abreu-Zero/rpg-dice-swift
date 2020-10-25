@@ -68,9 +68,9 @@ public class DndAPI{
         task.resume()
     }
     
-    class func categoryRequest(url: String, category: String, completionHandler: @escaping (Category?, Error?) -> Void){
+    class func categoryRequest(url: String, category: String, completionHandler: @escaping (Category?, Error?) -> Void) -> URLSessionTask?{
                 
-        guard let url = URL(string: baseURL + url) else{return}
+        guard let url = URL(string: baseURL + url) else{return nil}
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             
@@ -108,11 +108,12 @@ public class DndAPI{
             }
         }
         task.resume()
+        return task
     }
     
-    class func equipRequest(url: String, completionHandler: @escaping (Item?, Error?) -> Void){
+    class func equipRequest(url: String, completionHandler: @escaping (Item?, Error?) -> Void) -> URLSessionTask?{
                 
-        guard let endURL = URL(string: self.baseURL + url) else {return}
+        guard let endURL = URL(string: self.baseURL + url) else {return nil}
         let task = URLSession.shared.dataTask(with: endURL){(data, response, error) in
             guard let data = data else {
                 completionHandler(nil, error)
@@ -127,5 +128,6 @@ public class DndAPI{
             
         }
         task.resume()
+        return task
     }
 }
