@@ -42,8 +42,12 @@ struct RacesResponse: Codable, Category{
 }
 
 struct AbilityBonus: Codable{
-    let name: String
-    let url: String
+    let abilityScore: [String : String]
     let bonus: Int
+    
+    enum CodingKeys: String, CodingKey{
+        case abilityScore = "ability_score"
+        case bonus
+    }
 }
 

@@ -34,7 +34,8 @@ class RacesBookViewController: UIViewController {
         
         abiBonusLabel.text = "Abilitiy Bonuses: "
         for a in race.abilityBonuses{
-            abiBonusLabel.text! += "\n\(a.name): \(a.bonus)"
+            let name = a.abilityScore["name"]
+            abiBonusLabel.text! += "\n\(name ?? "No name"): \(a.bonus)"
             abiBonusLabel.numberOfLines += 1
         }
         ageLabel.text = "Age: \(race.age)"
